@@ -17,6 +17,8 @@ const LandingHeader = () => {
 
   const isActive = (value) => location.pathname === value;
 
+  console.log(location.pathname);
+
   const navRef = useRef();
   navRef.current = navBackground;
 
@@ -63,7 +65,7 @@ const LandingHeader = () => {
                 <Menu.Item
                   key={index}
                   style={{
-                    color: isActive(item.to) ? "gray" : "black",
+                    fontWeight: isActive(item.to) && "600",
                   }}
                   onClick={() => {
                     routeTo(item.to);

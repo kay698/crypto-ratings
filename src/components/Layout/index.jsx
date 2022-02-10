@@ -10,11 +10,11 @@ const LandingLayout = ({ children }) => {
 
   return (
     <LayoutWrap>
-      <div className="layout">
-        <LandingHeader />
-        <main className="layout__main">{children}</main>
-        <LandingFooter />
-      </div>
+      {/* <div className="layout"> */}
+      <LandingHeader />
+      <main className="layout__main">{children}</main>
+      <LandingFooter />
+      {/* </div> */}
     </LayoutWrap>
   );
 };

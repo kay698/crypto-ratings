@@ -9,7 +9,7 @@ export const LandingMenuList = [
   },
   {
     title: "FAQs",
-    to: "/",
+    to: "/faq",
   },
   {
     title: "Contact",

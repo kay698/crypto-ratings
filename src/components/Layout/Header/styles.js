@@ -180,7 +180,7 @@ export const MobileWrap = styled.div`
         min-width: 120px;
         font-size: 14px;
         letter-spacing: 0.02em;
-        color: #979797;
+        color: #006eef;
         cursor: pointer;
         svg {
           margin-right: 10px;

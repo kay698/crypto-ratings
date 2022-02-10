@@ -4,7 +4,7 @@ import LandingLayout from "../../components/Layout";
 const LandingPage = () => {
   return (
     <LandingLayout>
-      <div>wek[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[jw</div>;
+      <div>Hey</div>;
     </LandingLayout>
   );
 };

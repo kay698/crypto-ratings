@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const FooterWrap = styled.div`
   background: #f5fcff;
+  width: 100%;
   .comingSoon {
     margin: 100px 0;
     width: 90%;
