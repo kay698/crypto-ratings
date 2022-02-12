@@ -82,13 +82,16 @@ export const RateCalculatorWrapper = styled.div`
             color: #050bac;
 
             ::placeholder {
-              color: #050bac;
+              color: #828282;
             }
           }
           .ant-select-selection-placeholder,
           .ant-select-selection-item {
             padding-top: 10px !important;
             color: #050bac;
+          }
+          .ant-select-selection-placeholder {
+            color: #828282;
           }
           .ant-select-arrow,
           small,
