@@ -5,7 +5,7 @@ export const LandingMenuList = [
   },
   {
     title: "About",
-    to: "/",
+    to: "/about-us",
   },
   {
     title: "FAQs",

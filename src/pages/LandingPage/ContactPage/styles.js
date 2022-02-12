@@ -3,9 +3,7 @@ import styled from "styled-components";
 export const ContactUsWrapper = styled.div`
   width: 100%;
   height: 100%;
-  h1 {
-    color: #050bac;
-  }
+
   .leftSection {
     button {
       margin-bottom: 30px;

@@ -185,6 +185,7 @@ input:-webkit-autofill:active {
 
 h1 {
   font-size: 50px !important;
+  color: #050bac !important;
 }
 @media (max-width: 1000px) {
   h1 {
