@@ -4,7 +4,7 @@ import { FaqWrapper } from "./styles";
 import { FlexibleDiv } from "../../../components/Box/styles";
 import { faqs } from "../../../utils/dataHelpers/faqs";
 import { Collapse, Typography } from "antd";
-// import Button from "../../../components/Button";
+import Button from "../../../components/Button";
 
 const FaqPage = () => {
   const { Panel } = Collapse;
@@ -14,9 +14,9 @@ const FaqPage = () => {
         <FlexibleDiv justifyContent="flex-start" alignItems="flex-start">
           <Typography.Title>
             Frequently &nbsp;
-            {/* <Button width="max-content">
+            <Button width="max-content">
               Speak to a customer care agent
-            </Button>{" "} */}
+            </Button>{" "}
             <br />
             Asked Questions
           </Typography.Title>

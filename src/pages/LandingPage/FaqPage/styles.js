@@ -6,6 +6,7 @@ export const FaqWrapper = styled.div`
   h1 {
     color: #050bac;
   }
+
   .ant-collapse {
     border: none;
     background: transparent;
@@ -29,5 +30,14 @@ export const FaqWrapper = styled.div`
     width: 100%;
     background: #fff;
     overflow: hidden;
+  }
+
+  @media (max-width: 800px) {
+    button {
+      display: none;
+    }
+    h1 {
+      margin: 0;
+    }
   }
 `;
