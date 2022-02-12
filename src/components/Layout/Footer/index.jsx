@@ -3,9 +3,6 @@ import { FooterWrap } from "./styles";
 import { FlexibleDiv } from "../../Box/styles";
 import { Link } from "react-router-dom";
 import { Typography } from "antd";
-import Twitter from "../../../assets/svgs/twitter.svg";
-import Facebook from "../../../assets/svgs/facebook.svg";
-import Instagram from "../../../assets/svgs/instagram.svg";
 import Lines from "../../../assets/svgs/coming-soon-lines.svg";
 import Apple from "../../../assets/svgs/apple.svg";
 import Google from "../../../assets/svgs/google-play.svg";
@@ -14,6 +11,7 @@ import Logo from "../../../assets/svgs/logo.svg";
 import Hetical from "../../../assets/pngs/hetical.png";
 import Button from "../../Button";
 import Input from "../../TextField";
+import { Twitter, Instagram, Facebook } from "../../../assets/svgs/exports";
 
 const LandingFooter = () => {
   const { Title, Text, Paragraph } = Typography;
@@ -127,14 +125,14 @@ const LandingFooter = () => {
                 <p>iratersworld@gmail.com</p>
                 <FlexibleDiv justifyContent="space-between" width="150px">
                   <a href="/">
-                    <img src={Facebook} alt="" />
+                    <Facebook />
                   </a>
                   <a href="/">
-                    <img src={Instagram} alt="" />
+                    <Instagram />
                   </a>
 
                   <a href="/">
-                    <img src={Twitter} alt="" />
+                    <Twitter />
                   </a>
                 </FlexibleDiv>
               </FlexibleDiv>

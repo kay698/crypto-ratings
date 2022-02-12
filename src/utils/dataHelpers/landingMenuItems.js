@@ -13,6 +13,6 @@ export const LandingMenuList = [
   },
   {
     title: "Contact",
-    to: "/",
+    to: "/contact-us",
   },
 ];

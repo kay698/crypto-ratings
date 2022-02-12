@@ -7,6 +7,7 @@ import Login from "./pages/Auth/login";
 import ResetPassword from "./pages/Auth/reset-password";
 import ForgotPassword from "./pages/Auth/forgot-password";
 import FaqPage from "./pages/LandingPage/FaqPage";
+import ContactUsPage from "./pages/LandingPage/ContactPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/faq" element={<FaqPage />} />
+            <Route path="/contact-us" element={<ContactUsPage />} />
             <Route path="/" element={<LandingPage />} />
           </Routes>
         </ScrollToTop>
