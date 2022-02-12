@@ -11,6 +11,7 @@ export const FaqWrapper = styled.div`
     background: transparent;
     overflow: hidden;
     width: 100%;
+    margin: 0 0 20px 0;
 
     svg,
     .ant-collapse-header {
@@ -26,7 +27,6 @@ export const FaqWrapper = styled.div`
     border-radius: 10px !important;
     border: 1px solid rgba(0, 110, 239, 0.3);
     width: 100%;
-    /* margin: 0 0 20px 0; */
     background: #fff;
     overflow: hidden;
   }

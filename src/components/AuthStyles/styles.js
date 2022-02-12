@@ -4,7 +4,6 @@ export const AuthStylesWrap = styled.div`
   width: 100vw;
   height: max-content;
   background: #f5fcff;
-  background-size: 100% 100%;
 
   a {
     font-weight: 300;
@@ -41,6 +40,7 @@ export const AuthStylesWrap = styled.div`
   .auth {
     .auth__sub {
       min-height: 100vh;
+      padding: 50px 0;
       align-items: center;
       @media (min-width: 600px) {
         width: 500px;

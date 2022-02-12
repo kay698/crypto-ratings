@@ -45,7 +45,6 @@ const LandingHeader = () => {
         <FlexibleDiv
           justifyContent="space-between"
           className="desktopHeader__sub"
-          // height="100%"
           width="90%"
           alignItems="flex-end"
           flexWrap="no-wrap"
@@ -77,11 +76,11 @@ const LandingHeader = () => {
             </Menu>
           </FlexibleDiv>
           <FlexibleDiv width="max-content" flexWrap="no-wrap">
-            <Link to="/" className="login">
+            <Link to="/login" className="login">
               Login
             </Link>
             <Button width="120px" height="50px">
-              Register
+              <Link to="/signup">Register</Link>
             </Button>
           </FlexibleDiv>
         </FlexibleDiv>
