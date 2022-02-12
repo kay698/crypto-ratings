@@ -96,7 +96,7 @@ export const RateCalculatorWrapper = styled.div`
             color: #050bac;
           }
           .currentTrading {
-            margin: -70px 0 0 5px;
+            margin: -20px 0 0 5px;
             color: #828282;
             span {
               color: #050bac;
@@ -117,7 +117,7 @@ export const RateCalculatorWrapper = styled.div`
             box-shadow: 0px 20px 70px rgba(0, 110, 239, 0.3);
           }
         }
-        @media (max-width: 600px) {
+        @media (max-width: 1100px) {
           padding: 40px 20px;
           border-radius: 20px;
         }

@@ -84,10 +84,10 @@ const RateCalculatorPage = () => {
                   <Form.Item name="phoneNumber">
                     <Input autocomplete="off" placeholder="5" type="number" />
                   </Form.Item>
+                  <span className="currentTrading">
+                    Current trading rate:<span> #390 / $1</span>
+                  </span>
                 </FlexibleDiv>
-                <span className="currentTrading">
-                  Current trading rate:<span>#390 / $1</span>
-                </span>
 
                 <FlexibleDiv flexDir="column" margin="50px 0 20px 0">
                   <small>You would get</small>
