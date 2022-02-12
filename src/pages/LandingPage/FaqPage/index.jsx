@@ -21,14 +21,18 @@ const FaqPage = () => {
             Asked Question
           </Typography.Title>
         </FlexibleDiv>
-        <FlexibleDiv justifyContent="flex-start" margin="50px 0 0 0">
-          <Collapse defaultActiveKey={["1"]}>
-            {faqs.map((item, idx) => (
+        <FlexibleDiv
+          justifyContent="flex-start"
+          margin="50px 0 0 0"
+          alignItems="flex-start"
+        >
+          {faqs.map((item, idx) => (
+            <Collapse>
               <Panel header={item.question} key={idx + 1}>
                 <p>{item.answer}</p>
               </Panel>
-            ))}
-          </Collapse>
+            </Collapse>
+          ))}
         </FlexibleDiv>
       </FaqWrapper>
     </LandingLayout>
