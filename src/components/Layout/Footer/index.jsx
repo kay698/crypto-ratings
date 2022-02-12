@@ -111,12 +111,12 @@ const LandingFooter = () => {
                   height="35px"
                   alignItems="flex-start"
                 >
-                  <Link to="/">Rate Calculator</Link>
-                  <Link to="/">FAQs</Link>
+                  <Link to="/rate-calculator">Rate Calculator</Link>
+                  <Link to="/faq">FAQs</Link>
                 </FlexibleDiv>
                 <FlexibleDiv justifyContent="space-between">
-                  <Link to="/">Contact </Link>
-                  <Link to="/">About </Link>
+                  <Link to="/contact-us">Contact </Link>
+                  <Link to="/about-us">About </Link>
                 </FlexibleDiv>
               </FlexibleDiv>
               <FlexibleDiv flexDir="column" alignItems="flex-start">

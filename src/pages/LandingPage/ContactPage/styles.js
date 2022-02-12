@@ -33,7 +33,7 @@ export const ContactUsWrapper = styled.div`
 
     .authForm {
       background: #fff;
-      border-radius: 20px;
+      border-radius: 40px;
       max-width: 600px;
 
       padding: 40px;
@@ -64,6 +64,7 @@ export const ContactUsWrapper = styled.div`
       }
       @media (max-width: 600px) {
         padding: 40px 20px;
+        border-radius: 20px;
       }
     }
   }

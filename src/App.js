@@ -9,6 +9,7 @@ import ForgotPassword from "./pages/Auth/forgot-password";
 import FaqPage from "./pages/LandingPage/FaqPage";
 import ContactUsPage from "./pages/LandingPage/ContactPage";
 import AboutPage from "./pages/LandingPage/AboutPage";
+import RateCalculator from "./pages/LandingPage/RateCalculator";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/contact-us" element={<ContactUsPage />} />
             <Route path="/about-us" element={<AboutPage />} />
+            <Route path="/rate-calculator" element={<RateCalculator />} />
             <Route path="/" element={<LandingPage />} />
           </Routes>
         </ScrollToTop>
