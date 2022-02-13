@@ -3,10 +3,13 @@ import styled from "styled-components";
 export const HeroSectionWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
-  padding: 150px 0;
+  padding: 150px 0 100px 0;
+  background: #050bac;
+  box-sizing: border-box;
 
   .heroSection {
     max-width: 700px;
+    width: 90%;
     position: relative;
     .star {
       position: absolute;
@@ -19,19 +22,18 @@ export const HeroSectionWrapper = styled.div`
     h1,
     span {
       text-align: center;
-      position: relative;
+      color: #ffffff !important;
     }
 
     p {
       font-weight: 600;
-      color: #006eef;
       margin: 10px 0;
       font-size: 16px;
     }
 
     h1 {
       span {
-        color: #006eef;
+        color: #f2c94c !important;
       }
     }
 
@@ -44,7 +46,7 @@ export const HeroSectionWrapper = styled.div`
     }
   }
   @media (max-width: 750px) {
-    padding: 100px 0;
+    padding: 100px 0 50px 0;
     .heroSection {
       .star {
         position: absolute;
