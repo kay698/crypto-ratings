@@ -6,11 +6,16 @@ import { Typography } from "antd";
 import Button from "../../components/Button";
 import CheckLine from "../../assets/svgs/checkline.svg";
 import Star from "../../assets/svgs/star.svg";
+import {
+  giftCardList,
+  cryptoCardList,
+} from "../../utils/dataHelpers/rateCalculator";
+import { useNavigate } from "react-router-dom";
 
 const CardTradePage = () => {
   const [activeCard, setActiveCard] = useState("GiftCards");
+  const navigate = useNavigate();
 
-  console.log(activeCard);
   return (
     <LandingLayout>
       <CardTradePageWrapper>
@@ -42,6 +47,23 @@ const CardTradePage = () => {
               >
                 Cryptocurrency
               </Button>
+            )}
+          </FlexibleDiv>
+
+          <FlexibleDiv className="cardsWrap">
+            {(activeCard === "GiftCards" ? giftCardList : cryptoCardList).map(
+              (item, idx) => (
+                <FlexibleDiv key={idx}>
+                  <img src={item.logo} />
+                  <Button
+                    onClick={() => {
+                      navigate.push("/rate-calculator");
+                    }}
+                  >
+                    Check Rate
+                  </Button>
+                </FlexibleDiv>
+              )
             )}
           </FlexibleDiv>
         </FlexibleDiv>
