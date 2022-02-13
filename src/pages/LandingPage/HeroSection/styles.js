@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeroSectionWrapper = styled.div`
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 150px 0 100px 0;
   background: #050bac;
   box-sizing: border-box;

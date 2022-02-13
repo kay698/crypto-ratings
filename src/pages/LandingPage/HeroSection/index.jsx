@@ -13,8 +13,8 @@ const HeroSection = () => {
         <FlexibleDiv flexDir="column" className="heroSection">
           <p>The Best Plug to –</p>
           <Typography.Title>
-            Trade your <span>Giftcards</span> & <span>Bitcoin</span> for Cash
-            Instantly.
+            Trade your <span>Giftcards</span> & <br /> <span>Bitcoin</span> for
+            Cash Instantly.
             <img src={CheckLine} alt="" />
           </Typography.Title>
           <img alt="" src={Star} className="star" />
