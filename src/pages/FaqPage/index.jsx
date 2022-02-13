@@ -1,10 +1,10 @@
 import React from "react";
-import LandingLayout from "../../../components/Layout";
+import LandingLayout from "../../components/Layout";
 import { FaqWrapper } from "./styles";
-import { FlexibleDiv } from "../../../components/Box/styles";
-import { faqs } from "../../../utils/dataHelpers/faqs";
+import { FlexibleDiv } from "../../components/Box/styles";
+import { faqs } from "../../utils/dataHelpers/faqs";
 import { Collapse, Typography } from "antd";
-import Button from "../../../components/Button";
+import Button from "../../components/Button";
 
 const FaqPage = () => {
   const { Panel } = Collapse;

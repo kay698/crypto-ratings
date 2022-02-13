@@ -6,10 +6,10 @@ import Signup from "./pages/Auth/signup";
 import Login from "./pages/Auth/login";
 import ResetPassword from "./pages/Auth/reset-password";
 import ForgotPassword from "./pages/Auth/forgot-password";
-import FaqPage from "./pages/LandingPage/FaqPage";
-import ContactUsPage from "./pages/LandingPage/ContactPage";
-import AboutPage from "./pages/LandingPage/AboutPage";
-import RateCalculator from "./pages/LandingPage/RateCalculator";
+import FaqPage from "./pages/FaqPage";
+import ContactUsPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage";
+import RateCalculator from "./pages/RateCalculator";
 import CardTradePage from "./pages/CardTradePage";
 
 function App() {

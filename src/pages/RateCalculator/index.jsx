@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import LandingLayout from "../../../components/Layout";
-import { FlexibleDiv } from "../../../components/Box/styles";
+import LandingLayout from "../../components/Layout";
+import { FlexibleDiv } from "../../components/Box/styles";
 import { RateCalculatorWrapper } from "./styles";
 import { Typography, Form, Select } from "antd";
-import Rateimage from "../../../assets/svgs/rate.svg";
+import Rateimage from "../../assets/svgs/rate.svg";
 import { SmileOutlined, LoadingOutlined } from "@ant-design/icons";
-import Input from "../../../components/TextField";
-import Button from "../../../components/Button";
+import Input from "../../components/TextField";
+import Button from "../../components/Button";
 import {
   cardCategories,
   giftCardList,
-} from "../../../utils/dataHelpers/rateCalculator";
+} from "../../utils/dataHelpers/rateCalculator";
 
 const RateCalculatorPage = () => {
   const [isLoading, setIsLoading] = useState(false);

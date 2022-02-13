@@ -1,11 +1,11 @@
 import React from "react";
-import LandingLayout from "../../../components/Layout";
-import { FlexibleDiv } from "../../../components/Box/styles";
+import LandingLayout from "../../components/Layout";
+import { FlexibleDiv } from "../../components/Box/styles";
 import { AboutWrapper } from "./styles";
 import { Typography } from "antd";
-import Mission from "../../../assets/svgs/mission.svg";
-import Values from "../../../assets/svgs/values.svg";
-import Vision from "../../../assets/svgs/vision.svg";
+import Mission from "../../assets/svgs/mission.svg";
+import Values from "../../assets/svgs/values.svg";
+import Vision from "../../assets/svgs/vision.svg";
 
 const AboutPage = () => {
   return (

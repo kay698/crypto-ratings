@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import LandingLayout from "../../../components/Layout";
+import LandingLayout from "../../components/Layout";
 import { ContactUsWrapper } from "./styles";
-import { FlexibleDiv } from "../../../components/Box/styles";
-import { validateEmail, validatePhone } from "../../../utils/functionLibraries";
+import { FlexibleDiv } from "../../components/Box/styles";
+import { validateEmail, validatePhone } from "../../utils/functionLibraries";
 import { Collapse, Typography, Form } from "antd";
-import Button from "../../../components/Button";
+import Button from "../../components/Button";
 import { SmileOutlined, LoadingOutlined } from "@ant-design/icons";
-import Input from "../../../components/TextField";
-import { Twitter, Instagram, Facebook } from "../../../assets/svgs/exports";
+import Input from "../../components/TextField";
+import { Twitter, Instagram, Facebook } from "../../assets/svgs/exports";
 
 const ContactUsPage = () => {
   const [isLoading, setIsLoading] = useState(false);
