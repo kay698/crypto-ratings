@@ -3,6 +3,7 @@ import LandingLayout from "../../components/Layout";
 import { LandingPageWrapper } from "./styles";
 import HeroSection from "./HeroSection";
 import YourMoney from "./YourMoney";
+import Security from "./Security";
 
 const LandingPage = () => {
   return (
@@ -10,6 +11,7 @@ const LandingPage = () => {
       <LandingPageWrapper>
         <HeroSection />
         <YourMoney />
+        <Security />
       </LandingPageWrapper>
     </LandingLayout>
   );
