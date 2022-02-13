@@ -1,20 +1,15 @@
 import React from "react";
-// import { Layout } from "antd";
 import { LayoutWrap } from "./styles";
 import LandingHeader from "./Header";
 import LandingFooter from "./Footer";
 import "antd/dist/antd.css";
 
-const LandingLayout = ({ children }) => {
-  // const { Content } = Layout;
-
+const LandingLayout = ({ noPadding, children }) => {
   return (
-    <LayoutWrap>
-      {/* <div className="layout"> */}
+    <LayoutWrap noPadding={noPadding}>
       <LandingHeader />
       <main className="layout__main">{children}</main>
       <LandingFooter />
-      {/* </div> */}
     </LayoutWrap>
   );
 };

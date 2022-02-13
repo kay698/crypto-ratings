@@ -29,7 +29,7 @@ const CardTradePage = () => {
             >
               <p>The Best Plug to –</p>
               <Typography.Title>
-                Trade your <span>Giftcards</span>{" "}
+                Trade your <span>{activeCard}</span>{" "}
                 <img alt="" src={Star} className="star" />
                 <br /> for Cash Instantly.
               </Typography.Title>
