@@ -4,6 +4,7 @@ import { FlexibleDiv } from "../../../components/Box/styles";
 import { Typography } from "antd";
 import HeroCards from "../../../assets/pngs/hero-cards.png";
 import Star from "../../../assets/svgs/star.svg";
+import CheckLine from "../../../assets/svgs/checkline.svg";
 
 const HeroSection = () => {
   return (
