@@ -10,6 +10,7 @@ import FaqPage from "./pages/LandingPage/FaqPage";
 import ContactUsPage from "./pages/LandingPage/ContactPage";
 import AboutPage from "./pages/LandingPage/AboutPage";
 import RateCalculator from "./pages/LandingPage/RateCalculator";
+import CardTradePage from "./pages/CardTradePage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/contact-us" element={<ContactUsPage />} />
             <Route path="/about-us" element={<AboutPage />} />
             <Route path="/rate-calculator" element={<RateCalculator />} />
+            <Route path="/trade-card" element={<CardTradePage />} />
             <Route path="/" element={<LandingPage />} />
           </Routes>
         </ScrollToTop>
