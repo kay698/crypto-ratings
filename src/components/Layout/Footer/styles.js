@@ -132,6 +132,9 @@ export const FooterWrap = styled.div`
     overflow-x: hidden;
     transition: all 0.3s ease;
 
+    .landingPageFooter__logoWrap {
+      padding: 0 0 15px 0;
+    }
     .landingPageFooter__sub {
       & > div {
         max-width: 200px;

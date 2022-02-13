@@ -8,6 +8,7 @@ import Button from "../../Button";
 import MobileNav from "./mobileNav";
 import { throttle } from "lodash";
 import { useLocation, Link } from "react-router-dom";
+import LogoWhite from "../../../assets/svgs/logo-white.svg";
 
 const LandingHeader = () => {
   const [navBackground, setNavBackground] = useState(false);
@@ -16,8 +17,6 @@ const LandingHeader = () => {
   const handleShowMenu = () => setShowMenu(!showMenu);
 
   const isActive = (value) => location.pathname === value;
-
-  console.log(location.pathname);
 
   const navRef = useRef();
   navRef.current = navBackground;
@@ -40,7 +39,7 @@ const LandingHeader = () => {
   };
 
   return (
-    <HeaderWrap>
+    <HeaderWrap showMenu={showMenu}>
       <FlexibleDiv className="desktopHeader">
         <FlexibleDiv
           justifyContent="space-between"
@@ -51,7 +50,11 @@ const LandingHeader = () => {
         >
           <Link to="/" target="">
             <div className="desktopHeader__logoWrap">
-              <img alt="" src={Logo} />
+              {location.pathname === "/" ? (
+                <img alt="" src={LogoWhite} />
+              ) : (
+                <img alt="" src={Logo} />
+              )}
             </div>
           </Link>
           <FlexibleDiv
@@ -65,6 +68,7 @@ const LandingHeader = () => {
                   key={index}
                   style={{
                     fontWeight: isActive(item.to) && "600",
+                    color: location.pathname === "/" ? "#fff" : "#006eef",
                   }}
                   onClick={() => {
                     routeTo(item.to);
@@ -76,19 +80,35 @@ const LandingHeader = () => {
             </Menu>
           </FlexibleDiv>
           <FlexibleDiv width="max-content" flexWrap="no-wrap">
-            <Link to="/login" className="login">
+            <Link
+              to="/login"
+              className="login"
+              style={{
+                color: location.pathname === "/" ? "#fff" : "#006eef",
+              }}
+            >
               Login
             </Link>
-            <Button width="120px" height="50px">
-              <Link to="/signup">Register</Link>
-            </Button>
+            {location.pathname === "/" ? (
+              <Button width="120px" height="50px" className="whiteButton">
+                <Link to="/signup">Register</Link>
+              </Button>
+            ) : (
+              <Button width="120px" height="50px">
+                <Link to="/signup">Register</Link>
+              </Button>
+            )}
           </FlexibleDiv>
         </FlexibleDiv>
       </FlexibleDiv>
       <FlexibleDiv className="mobileMenuWrap">
         <Link to="/" target="">
           <div className="mobileHeader__logoWrap">
-            <img alt="" src={Logo} />
+            {location.pathname === "/" ? (
+              <img alt="" src={LogoWhite} />
+            ) : (
+              <img alt="" src={Logo} />
+            )}
           </div>
         </Link>
         <FlexibleDiv>

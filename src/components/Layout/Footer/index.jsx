@@ -7,7 +7,7 @@ import Lines from "../../../assets/svgs/coming-soon-lines.svg";
 import Apple from "../../../assets/svgs/apple.svg";
 import Google from "../../../assets/svgs/google-play.svg";
 import ComingSoon from "../../../assets/svgs/coming-soon.svg";
-import Logo from "../../../assets/svgs/logo.svg";
+import Logo from "../../../assets/svgs/logo-white.svg";
 import Hetical from "../../../assets/pngs/hetical.png";
 import Button from "../../Button";
 import Input from "../../TextField";

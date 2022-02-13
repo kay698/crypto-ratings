@@ -12,13 +12,13 @@ export const LayoutWrap = styled.div`
   flex-direction: column;
 
   .layout__main {
-    padding-top: ${({ noPadding }) => (noPadding ? "0" : "180px  0")};
+    padding-top: ${({ noPadding }) => (noPadding ? "0" : "180px")};
     margin: 0;
     height: max-content;
     min-height: calc(100vh - 80px);
     width: ${({ noPadding }) => (noPadding ? "100%" : "90%")};
     @media (max-width: 600px) {
-      padding-top: ${({ noPadding }) => (noPadding ? "0" : "100px 0")};
+      padding-top: ${({ noPadding }) => (noPadding ? "0" : "100px")};
     }
   }
 `;
