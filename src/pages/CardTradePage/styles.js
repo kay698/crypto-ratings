@@ -44,6 +44,7 @@ export const CardTradePageWrapper = styled.div`
 
       img {
         width: 140%;
+        margin-top: -20px;
       }
 
       .ant-btn {
@@ -71,6 +72,9 @@ export const CardTradePageWrapper = styled.div`
         padding: 0 10px;
         border-radius: 15px;
         margin: 0 0 30px 0;
+        img {
+          margin-top: -15px;
+        }
       }
     }
     @media (max-width: 600px) {
@@ -85,6 +89,11 @@ export const CardTradePageWrapper = styled.div`
       }
     }
     @media (max-width: 400px) {
+      & > div {
+        img {
+          margin-top: 0;
+        }
+      }
       .ant-btn {
         height: 35px;
       }

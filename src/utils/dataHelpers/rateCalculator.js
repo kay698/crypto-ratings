@@ -11,23 +11,22 @@ import RazorGold from "../../assets/pngs/razorgold.png";
 import Xbox from "../../assets/pngs/xbox.png";
 import Ebay from "../../assets/pngs/ebay.png";
 import Amex from "../../assets/pngs/amex.png";
-
-// import AppleCircle from "../../assets/pngs/appleCircle.png";
-// import AmazonCircle from "../../assets/pngs/amazonCircle.png";
-// import BestBuy from "../../assets/pngs/bestBuy.png";
-// // import Fcmb from "../../assets/pngs/fcmb.png";
-// import FirstBank from "../../assets/pngs/firstBank.png";
-// import ECOBank from "../../assets/pngs/ecoBank.png";
-// import Access from "../../assets/pngs/accessBank.png";
-// import Fidelity from "../../assets/pngs/fidelity.png";
-// import RejectedOne from "../../assets/pngs/rejectedExampleOne.png";
-// import RejectedTwo from "../../assets/pngs/rejectedExampleTwo.png";
-// import RejectedThree from "../../assets/pngs/rejectedExampleThree.png";
+import Bitcoin from "../../assets/pngs/bitcoin.png";
+import T from "../../assets/pngs/t.png";
+import Eth from "../../assets/pngs/eth.png";
 
 export const cryptoCardList = [
   {
-    title: "Apple iTunes",
-    logo: Itunes,
+    title: "Bitcoin",
+    logo: Bitcoin,
+  },
+  {
+    title: "Eth",
+    logo: Eth,
+  },
+  {
+    title: "T",
+    logo: T,
   },
 ];
 
