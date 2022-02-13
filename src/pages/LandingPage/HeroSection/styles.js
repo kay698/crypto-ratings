@@ -32,8 +32,21 @@ export const HeroSectionWrapper = styled.div`
     }
 
     h1 {
+      position: relative;
+
       span {
         color: #f2c94c !important;
+      }
+      img {
+        position: absolute;
+        width: 50%;
+        min-width: 30px;
+        bottom: 0;
+        right: 5%;
+        opacity: 0.5;
+        @media (max-width: 421px) {
+          right: 30%;
+        }
       }
     }
 

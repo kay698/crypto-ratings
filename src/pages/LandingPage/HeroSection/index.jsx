@@ -15,6 +15,7 @@ const HeroSection = () => {
           <Typography.Title>
             Trade your <span>Giftcards</span> & <span>Bitcoin</span> for Cash
             Instantly.
+            <img src={CheckLine} alt="" />
           </Typography.Title>
           <img alt="" src={Star} className="star" />
           <span>
