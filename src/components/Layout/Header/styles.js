@@ -37,9 +37,16 @@ export const HeaderWrap = styled.div`
       margin: 20px 25px 0 0;
       transition: all 0.3s ease;
       letter-spacing: 0.02em;
-      font-size: 16px;
+      font-size: 14px;
       @media (max-width: 1000px) {
         font-size: 13px;
+      }
+    }
+
+    .whiteButton {
+      background: #fff;
+      a {
+        color: #006eef !important;
       }
     }
 
@@ -59,8 +66,8 @@ export const HeaderWrap = styled.div`
           position: relative;
           letter-spacing: 0.02em;
           transition: all 0.3s ease;
-          font-size: 16px;
-          color: #006eef;
+          font-size: 14px;
+          /* color: #006eef; */
           @media (max-width: 1000px) {
             font-size: 13px;
           }
@@ -111,9 +118,10 @@ export const HeaderWrap = styled.div`
     .mobileHeader__menuIcon {
       background: white;
       box-shadow: 0 0 220px 0.5px black;
+      overflow: hidden;
       border-radius: 100%;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       cursor: pointer;
       position: fixed;
       z-index: 1000;
@@ -129,7 +137,7 @@ export const HeaderWrap = styled.div`
       }
       .mobileHeader__menuIcon__firstTab {
         height: ${(props) => (props.showMenu ? "2px" : "3px")};
-        width: ${(props) => (props.showMenu ? "30px" : "20px")};
+        width: ${(props) => (props.showMenu ? "22px" : "15px")};
         left: ${(props) => (props.showMenu ? "0" : "3px")};
         transform: ${(props) =>
           props.showMenu ? "rotate(-40deg)" : "rotate(0);"};
@@ -141,7 +149,7 @@ export const HeaderWrap = styled.div`
       }
       .mobileHeader__menuIcon__thirdTab {
         height: ${(props) => (props.showMenu ? "2px" : "3px")};
-        width: ${(props) => (props.showMenu ? "30px" : "20px")};
+        width: ${(props) => (props.showMenu ? "22px" : "15px")};
         left: ${(props) => (props.showMenu ? "0" : "-1px")};
         transform: ${(props) =>
           props.showMenu ? "rotate(40deg)" : "rotate(0);"};
@@ -180,7 +188,7 @@ export const MobileWrap = styled.div`
         min-width: 120px;
         font-size: 14px;
         letter-spacing: 0.02em;
-        color: #979797;
+        color: #006eef;
         cursor: pointer;
         svg {
           margin-right: 10px;

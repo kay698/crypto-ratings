@@ -4,7 +4,6 @@ export const AuthStylesWrap = styled.div`
   width: 100vw;
   height: max-content;
   background: #f5fcff;
-  background-size: 100% 100%;
 
   a {
     font-weight: 300;
@@ -41,6 +40,7 @@ export const AuthStylesWrap = styled.div`
   .auth {
     .auth__sub {
       min-height: 100vh;
+      padding: 50px 0;
       align-items: center;
       @media (min-width: 600px) {
         width: 500px;
@@ -62,7 +62,7 @@ export const AuthStylesWrap = styled.div`
 
       .authForm {
         background: #fff;
-        border-radius: 20px;
+        border-radius: 40px;
         padding: 40px;
         animation: popUp 1s 1 ease;
         transform: translateY(0);
@@ -106,6 +106,7 @@ export const AuthStylesWrap = styled.div`
         }
         @media (max-width: 600px) {
           padding: 40px 10px;
+          border-radius: 20px;
         }
       }
     }

@@ -13,6 +13,10 @@ export default styled(Input)`
   border-radius: 12px;
   box-shadow: none;
   font-size: 16px;
+  color: #828282;
+  ::placeholder {
+    color: #828282;
+  }
 
   .passwordInput {
     width: ${({ width }) => width || "100%"};

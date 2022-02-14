@@ -1,18 +1,18 @@
 export const LandingMenuList = [
   {
     title: "Rate calculator",
-    to: "/",
+    to: "/rate-calculator",
   },
   {
     title: "About",
-    to: "/",
+    to: "/about-us",
   },
   {
     title: "FAQs",
-    to: "/",
+    to: "/faq",
   },
   {
     title: "Contact",
-    to: "/",
+    to: "/contact-us",
   },
 ];

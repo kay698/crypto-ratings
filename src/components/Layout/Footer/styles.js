@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const FooterWrap = styled.div`
   background: #f5fcff;
+  width: 100%;
   .comingSoon {
     margin: 100px 0;
     width: 90%;
@@ -60,7 +61,7 @@ export const FooterWrap = styled.div`
       z-index: 1;
 
       img {
-        width: 80%;
+        width: 90%;
       }
       @media (max-width: 1200px) and (min-width: 800px) {
         opacity: 0.5;
@@ -69,7 +70,8 @@ export const FooterWrap = styled.div`
 
     @media (max-width: 850px) {
       flex-direction: column;
-      padding: 100px 20px 0 20px;
+      padding: 50px 20px 0 20px;
+      border-radius: 30px;
       p {
         text-align: center;
       }
@@ -130,6 +132,9 @@ export const FooterWrap = styled.div`
     overflow-x: hidden;
     transition: all 0.3s ease;
 
+    .landingPageFooter__logoWrap {
+      padding: 0 0 15px 0;
+    }
     .landingPageFooter__sub {
       & > div {
         max-width: 200px;

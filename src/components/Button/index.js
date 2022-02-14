@@ -24,8 +24,9 @@ export default styled(Button)`
     background: ${({ hover }) => hover || "#0653ac"};
   }
 
-  span {
-    color: ${({ color }) => color || "#ffffff"};
+  span,
+  a {
+    color: ${({ color }) => color || "#ffffff !important"};
     font-weight: 600;
     font-size: ${({ fontSize }) => fontSize || "16px"};
   }
