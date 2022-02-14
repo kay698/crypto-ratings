@@ -4,7 +4,7 @@ export const SecurityWrapper = styled.div`
   width: 100%;
   height: max-content;
   position: relative;
-  padding: 100px 0;
+  padding: 100px 0 50px 0;
 
   .mainWrap {
     max-width: 90%;
