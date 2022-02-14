@@ -1,7 +1,6 @@
 import React from "react";
 import { CardsRangeWrapper } from "./styles";
 import { FlexibleDiv } from "../../../components/Box/styles";
-import Emojis from "../../../assets/svgs/emojis.svg";
 import { Typography } from "antd";
 import { bottomCards, topCards } from "../../../utils/dataHelpers/landingPage";
 

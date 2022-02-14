@@ -17,6 +17,113 @@ import Amex from "../../assets/pngs/amex.png";
 import BitcoinCard from "../../assets/pngs/bitcoin.png";
 import T from "../../assets/pngs/t.png";
 import Eth from "../../assets/pngs/eth.png";
+import PersonOne from "../../assets/pngs/person-one.png";
+import PersonTwo from "../../assets/pngs/person-two.png";
+import PersonThree from "../../assets/pngs/person-three.png";
+import PersonFour from "../../assets/pngs/person-four.png";
+import PersonFive from "../../assets/pngs/person-five.png";
+import PersonSix from "../../assets/pngs/person-six.png";
+import PersonSeven from "../../assets/pngs/person-seven.png";
+import PersonEight from "../../assets/pngs/person-eight.png";
+
+export const testimonials = [
+  {
+    image: PersonOne,
+    username: "@badboy_welbx",
+    channel: "Instagram",
+    comment: "Bitcoin and giftcard king 🙌❤️ cheers to a better time",
+  },
+  {
+    image: PersonTwo,
+    username: "@sunday.amedu.568",
+    channel: "Instagram",
+    comment: "My surest plugs 🔥",
+  },
+  {
+    image: PersonThree,
+    username: "@kushpac111",
+    channel: "Instagram",
+    comment: "Na iraters.ng sure pass this December🙌",
+  },
+  {
+    image: PersonFour,
+    username: "@zammygold2000",
+    channel: "Instagram",
+    comment: "Iraters.ng na the surest plug joor🙌🙌",
+  },
+  {
+    image: PersonFive,
+    username: "@damfred_lee",
+    channel: "Instagram",
+    comment: "Bitcoin and giftcard king 🙌❤️ cheers to a better time",
+  },
+  {
+    image: PersonSix,
+    username: "@brainiac_graphics",
+    channel: "Instagram",
+    comment: "Naso oo, na iraters.ng de gimme joy like this❤️",
+  },
+  {
+    image: PersonSeven,
+    username: "@_aysleek",
+    channel: "Instagram",
+    comment: "Higggggggggggggggghh rates!!!!! Na only for here you go see am💯",
+  },
+  {
+    image: PersonEight,
+    username: "@_maria_hanson_",
+    channel: "Instagram",
+    comment: "Customer’s service is top notch💯 keep it up🔥",
+  },
+  {
+    image: PersonOne,
+    username: "@badboy_welbx",
+    channel: "Instagram",
+    comment: "Bitcoin and giftcard king 🙌❤️ cheers to a better time",
+  },
+  {
+    image: PersonTwo,
+    username: "@sunday.amedu.568",
+    channel: "Instagram",
+    comment: "My surest plugs 🔥",
+  },
+  {
+    image: PersonThree,
+    username: "@kushpac111",
+    channel: "Instagram",
+    comment: "Na iraters.ng sure pass this December🙌",
+  },
+  {
+    image: PersonFour,
+    username: "@zammygold2000",
+    channel: "Instagram",
+    comment: "Iraters.ng na the surest plug joor🙌🙌",
+  },
+  {
+    image: PersonFive,
+    username: "@damfred_lee",
+    channel: "Instagram",
+    comment: "Bitcoin and giftcard king 🙌❤️ cheers to a better time",
+  },
+  {
+    image: PersonSix,
+    username: "@brainiac_graphics",
+    channel: "Instagram",
+    comment: "Naso oo, na iraters.ng de gimme joy like this❤️",
+  },
+  {
+    image: PersonSeven,
+    username: "@_aysleek",
+    channel: "Instagram",
+    comment: "Higggggggggggggggghh rates!!!!! Na only for here you go see am💯",
+  },
+  {
+    image: PersonEight,
+    username: "@_maria_hanson_",
+    channel: "Instagram",
+    comment: "Customer’s service is top notch💯 keep it up🔥",
+  },
+];
 
 export const bottomCards = [
   {

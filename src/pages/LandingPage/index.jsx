@@ -5,6 +5,7 @@ import HeroSection from "./HeroSection";
 import YourMoney from "./YourMoney";
 import Security from "./Security";
 import CardsRange from "./CardsRange";
+import Testimonials from "./Testimonials";
 
 const LandingPage = () => {
   return (
@@ -14,6 +15,7 @@ const LandingPage = () => {
         <YourMoney />
         <Security />
         <CardsRange />
+        <Testimonials />
       </LandingPageWrapper>
     </LandingLayout>
   );

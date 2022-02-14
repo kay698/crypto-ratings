@@ -39,12 +39,12 @@ export const HeroSectionWrapper = styled.div`
       }
       img {
         position: absolute;
-        width: 50%;
+        width: 55%;
         min-width: 30px;
         bottom: 0;
-        right: 5%;
+        right: 2%;
         opacity: 0.5;
-        @media (max-width: 421px) {
+        @media (max-width: 423px) {
           right: 30%;
         }
       }
