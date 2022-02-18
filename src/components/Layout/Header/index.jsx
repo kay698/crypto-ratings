@@ -7,13 +7,14 @@ import Logo from "../../../assets/svgs/logo.svg";
 import Button from "../../Button";
 import MobileNav from "./mobileNav";
 import { throttle } from "lodash";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import LogoWhite from "../../../assets/svgs/logo-white.svg";
 
 const LandingHeader = () => {
   const [navBackground, setNavBackground] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const handleShowMenu = () => setShowMenu(!showMenu);
 
   const isActive = (value) => location.pathname === value;
@@ -33,10 +34,6 @@ const LandingHeader = () => {
       document.removeEventListener("scroll", throttle(handleScroll, 100));
     };
   }, []);
-
-  const routeTo = (path) => {
-    window.location.replace(path);
-  };
 
   return (
     <HeaderWrap showMenu={showMenu}>
@@ -71,7 +68,7 @@ const LandingHeader = () => {
                     color: location.pathname === "/" ? "#fff" : "#006eef",
                   }}
                   onClick={() => {
-                    routeTo(item.to);
+                    navigate(item.to);
                   }}
                 >
                   {item.title}
