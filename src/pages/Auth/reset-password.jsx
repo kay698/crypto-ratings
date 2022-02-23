@@ -1,61 +1,61 @@
-import React, { useState } from "react";
-import { FlexibleDiv } from "../../components/Box/styles";
-import { AuthStylesWrap } from "../../components/AuthStyles/styles";
-import { Typography, Input, Form, notification } from "antd";
-import { Link } from "react-router-dom";
-// import { ResetPasswordUser } from "../../network/auth";
-import { SmileOutlined, LoadingOutlined } from "@ant-design/icons";
-import Logo from "../../assets/pngs/logo.png";
-import Button from "../../components/Button";
-import { validatePwd } from "../../utils/functionLibraries";
+import React, { useState } from "react"
+import { FlexibleDiv } from "../../components/Box/styles"
+import { AuthStylesWrap } from "../../components/AuthStyles/styles"
+import { Typography, Input, Form, notification } from "antd"
+import { Link } from "react-router-dom"
+import { SmileOutlined, LoadingOutlined } from "@ant-design/icons"
+import Logo from "../../assets/pngs/logo.png"
+import Button from "../../components/Button"
+import { validatePwd } from "../../utils/functionLibraries"
+import { resetPassword } from "../../network/users"
 
 const ResetPassword = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [password, setPassword] = useState();
+  const [isLoading, setIsLoading] = useState(false)
+  const [password, setPassword] = useState()
 
-  const { Text, Title } = Typography;
-  const [form] = Form.useForm();
+  const { Text, Title } = Typography
+  const [form] = Form.useForm()
 
   const handleConfirmPassword = (rule, value) => {
     return new Promise(async (resolve, reject) => {
       if (!value) {
-        reject("Password must be confirmed");
+        reject("Password must be confirmed")
       } else if (value !== password) {
-        reject("Password does not match");
+        reject("Password does not match")
       } else {
-        resolve();
+        resolve()
       }
-    });
-  };
+    })
+  }
   async function handleFormSubmit(values) {
-    // setIsLoading(true);
-    // const payload = {
-    //   email: values.email.toLowerCase(),
-    //   password: values.password,
-    // };
-    // try {
-    //   const data = await ResetPasswordUser(payload);
-    //   sessionStorage.setItem("user_token", data.token);
-    //   window.location.replace("");
-    //   setIsLoading(false);
-    // } catch (error) {
-    //   if (error.response) {
-    //     notification.open({
-    //       message: "Error",
-    //       description: "Email or password is incorrect",
-    //       icon: <SmileOutlined style={{ color: "red" }} />,
-    //     });
-    //     setIsLoading(false);
-    //   } else {
-    //     notification.open({
-    //       message: "Error",
-    //       description:
-    //         "There was an issue with your network. Pls try again later",
-    //       icon: <SmileOutlined style={{ color: "red" }} />,
-    //     });
-    //     setIsLoading(false);
-    //   }
-    // }
+    setIsLoading(true)
+    const payload = {
+      email: values.email.toLowerCase(),
+      password: values.password,
+    }
+    try {
+      const data = await resetPassword(payload)
+      sessionStorage.setItem("user_token", data.token)
+      window.location.replace("")
+      setIsLoading(false)
+    } catch (error) {
+      if (error.response) {
+        notification.open({
+          message: "Error",
+          description: "Email or password is incorrect",
+          icon: <SmileOutlined style={{ color: "red" }} />,
+        })
+        setIsLoading(false)
+      } else {
+        notification.open({
+          message: "Error",
+          description:
+            "There was an issue with your network. Pls try again later",
+          icon: <SmileOutlined style={{ color: "red" }} />,
+        })
+        setIsLoading(false)
+      }
+    }
   }
 
   return (
@@ -99,7 +99,7 @@ const ResetPassword = () => {
         </FlexibleDiv>
       </FlexibleDiv>
     </AuthStylesWrap>
-  );
-};
+  )
+}
 
-export default ResetPassword;
+export default ResetPassword
