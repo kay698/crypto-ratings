@@ -14,6 +14,7 @@ import {
 
 const RateCalculatorPage = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [activeCard, setActiveCard] = useState("giftcards");
   const [form] = Form.useForm();
 
   const handleFormSubmit = () => {};
@@ -39,6 +40,23 @@ const RateCalculatorPage = () => {
             <FlexibleDiv className="authForm">
               <Form form={form} onFinish={handleFormSubmit} autocomplete="off">
                 <p>What rate would you like to check?</p>
+                <FlexibleDiv justifyContent="flex-start">
+                  <FlexibleDiv
+                    className={
+                      activeCard === "giftcards" ? "card active" : "card"
+                    }
+                    onClick={() => setActiveCard("giftcards")}
+                  >
+                    <p>Giftcards</p>
+                  </FlexibleDiv>
+                  <FlexibleDiv
+                    className={activeCard === "crypto" ? "card active" : "card"}
+                    margin="0 0 0 15px"
+                    onClick={() => setActiveCard("crypto")}
+                  >
+                    <p>Cryptocurrency</p>
+                  </FlexibleDiv>
+                </FlexibleDiv>
                 <Form.Item>
                   <Select placeholder="Select card category" listHeight={1000}>
                     {giftCardList.map((value, index) => (

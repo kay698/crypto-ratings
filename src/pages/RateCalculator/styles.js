@@ -127,4 +127,45 @@ export const RateCalculatorWrapper = styled.div`
       }
     }
   }
+
+  .card {
+    width: max-content;
+    padding: 10px 10px;
+    height: 50px;
+    background: #e0e0e0;
+    position: relative;
+    justify-content: flex-start;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    p {
+      margin: 0 30px 0 0;
+      font-weight: bold;
+    }
+    ::after {
+      content: "";
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      border: 1px solid #bbb;
+      background: #fefefe;
+      position: absolute;
+      right: 10px;
+    }
+  }
+
+  .active {
+    background: #e0e0e0;
+    background: #006eef;
+
+    p {
+      color: #fff !important;
+    }
+    ::after {
+      border: 3px solid #fff;
+      background: transparent;
+    }
+  }
 `;
