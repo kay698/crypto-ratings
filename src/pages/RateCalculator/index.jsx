@@ -11,11 +11,18 @@ import {
   cardCategories,
   giftCardList,
 } from "../../utils/dataHelpers/rateCalculator";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { getAllGiftCardCategories, getAllCrypto } from "../../network/cards";
 
 const RateCalculatorPage = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [activeCard, setActiveCard] = useState("giftcards");
+  const [categoryLoading, setCategoryLoading] = useState(false);
+  const location = useLocation();
+  const { state } = location;
+  const [activeCard, setActiveCard] = useState(
+    state?.card?.cardType || "Giftcards"
+  );
+  const [giftcardCategories, setCategory] = useState();
   const navigate = useNavigate();
   const [form] = Form.useForm();
 
@@ -23,11 +30,23 @@ const RateCalculatorPage = () => {
 
   useEffect(() => {
     const user = localStorage.getItem("user_token");
-
     if (user === null) {
       navigate("/login");
     }
   }, []);
+
+  const handleGiftCardCategories = async (val) => {
+    const payload = `page=1&perPage=1000`;
+
+    try {
+      const { data } = await getAllGiftCardCategories(payload);
+      setCategory(data);
+    } catch (e) {
+      console.log(e);
+    }
+    // if(activeCard === "Giftcards")
+  };
+  const selectCategory = (val) => {};
 
   return (
     <LandingLayout>
@@ -53,16 +72,16 @@ const RateCalculatorPage = () => {
                 <FlexibleDiv justifyContent="flex-start">
                   <FlexibleDiv
                     className={
-                      activeCard === "giftcards" ? "card active" : "card"
+                      activeCard === "Giftcards" ? "card active" : "card"
                     }
-                    onClick={() => setActiveCard("giftcards")}
+                    onClick={() => setActiveCard("Giftcards")}
                   >
                     <p>Giftcards</p>
                   </FlexibleDiv>
                   <FlexibleDiv
-                    className={activeCard === "crypto" ? "card active" : "card"}
+                    className={activeCard === "Crypto" ? "card active" : "card"}
                     margin="0 0 0 15px"
-                    onClick={() => setActiveCard("crypto")}
+                    onClick={() => setActiveCard("Crypto")}
                   >
                     <p>Cryptocurrency</p>
                   </FlexibleDiv>
@@ -84,23 +103,25 @@ const RateCalculatorPage = () => {
                     ))}
                   </Select>
                 </Form.Item>
-                <Form.Item>
-                  <Select placeholder="Select pricing" listHeight={1000}>
-                    {cardCategories.map((value, index) => (
-                      <Select.Option value={value.title} key={index}>
-                        <FlexibleDiv
-                          justifyContent="flex-start"
-                          style={{
-                            padding: "0 0 15px 0",
-                            borderBottom: "1px solid #eee",
-                          }}
-                        >
-                          {value.title}
-                        </FlexibleDiv>
-                      </Select.Option>
-                    ))}
-                  </Select>
-                </Form.Item>
+                {activeCard === "Giftcards" && (
+                  <Form.Item>
+                    <Select placeholder="Select pricing" listHeight={1000}>
+                      {cardCategories.map((value, index) => (
+                        <Select.Option value={value.title} key={index}>
+                          <FlexibleDiv
+                            justifyContent="flex-start"
+                            style={{
+                              padding: "0 0 15px 0",
+                              borderBottom: "1px solid #eee",
+                            }}
+                          >
+                            {value.title}
+                          </FlexibleDiv>
+                        </Select.Option>
+                      ))}
+                    </Select>
+                  </Form.Item>
+                )}
 
                 <FlexibleDiv
                   justifyContent="space-between"

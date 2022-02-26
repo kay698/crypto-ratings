@@ -6,14 +6,23 @@ import { Typography } from "antd";
 import Button from "../../components/Button";
 import CheckLine from "../../assets/svgs/checkline.svg";
 import Star from "../../assets/svgs/star.svg";
-import {
-  giftCardList,
-  cryptoCardList,
-} from "../../utils/dataHelpers/rateCalculator";
 import { useNavigate } from "react-router-dom";
+import { getAllGiftCardCategories, getAllCrypto } from "../../network/cards";
+import { LoadingOutlined } from "@ant-design/icons";
+import { useQuery } from "react-query";
+import { validateEmail } from "../../utils/functionLibraries";
 
 const CardTradePage = () => {
+  const [page] = useState(`page=1&perPage=1000`);
   const [activeCard, setActiveCard] = useState("GiftCards");
+  let { isLoading, data: giftcardList } = useQuery(
+    "giftCards",
+    async () => await getAllGiftCardCategories(page)
+  );
+  let { isLoading: cryptoLoading, data: crypoList } = useQuery(
+    "crypto",
+    async () => await getAllCrypto(page)
+  );
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,6 +32,12 @@ const CardTradePage = () => {
       navigate("/login");
     }
   }, []);
+
+  const getSingleCard = (val) => {
+    navigate("/rate-calculator", {
+      state: { card: { id: val._id, cardType: activeCard } },
+    });
+  };
 
   return (
     <LandingLayout>
@@ -58,22 +73,29 @@ const CardTradePage = () => {
             )}
           </FlexibleDiv>
 
-          <FlexibleDiv className="cardsWrap">
-            {(activeCard === "GiftCards" ? giftCardList : cryptoCardList).map(
-              (item, idx) => (
+          {isLoading || cryptoLoading ? (
+            <FlexibleDiv className="cardsWrap">
+              <LoadingOutlined />
+            </FlexibleDiv>
+          ) : (
+            <FlexibleDiv className="cardsWrap">
+              {(activeCard === "GiftCards"
+                ? giftcardList?.data
+                : crypoList?.data
+              ).map((item, idx) => (
                 <FlexibleDiv key={idx}>
                   <img src={item.logo} />
                   <Button
                     onClick={() => {
-                      navigate.push("/rate-calculator");
+                      getSingleCard(item);
                     }}
                   >
                     Check Rate
                   </Button>
                 </FlexibleDiv>
-              )
-            )}
-          </FlexibleDiv>
+              ))}
+            </FlexibleDiv>
+          )}
         </FlexibleDiv>
       </CardTradePageWrapper>
     </LandingLayout>

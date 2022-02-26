@@ -25,7 +25,7 @@ const Login = () => {
       const data = await logInUser(payload);
       localStorage.setItem("user_token", data.token);
       setIsLoading(false);
-      navigate("/trade-card"); // TODO: this should essentially lead to the dashboard
+      navigate("/trade-card");
     } catch (error) {
       if (error.response) {
         notification.open({
