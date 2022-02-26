@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LandingLayout from "../../components/Layout";
 import { FlexibleDiv } from "../../components/Box/styles";
 import { RateCalculatorWrapper } from "./styles";
@@ -11,13 +11,23 @@ import {
   cardCategories,
   giftCardList,
 } from "../../utils/dataHelpers/rateCalculator";
+import { useNavigate } from "react-router-dom";
 
 const RateCalculatorPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [activeCard, setActiveCard] = useState("giftcards");
+  const navigate = useNavigate();
   const [form] = Form.useForm();
 
   const handleFormSubmit = () => {};
+
+  useEffect(() => {
+    const user = localStorage.getItem("user_token");
+
+    if (user === null) {
+      navigate("/login");
+    }
+  }, []);
 
   return (
     <LandingLayout>

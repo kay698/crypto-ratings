@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LandingLayout from "../../components/Layout";
 import { FlexibleDiv } from "../../components/Box/styles";
 import { CardTradePageWrapper } from "./styles";
@@ -15,6 +15,14 @@ import { useNavigate } from "react-router-dom";
 const CardTradePage = () => {
   const [activeCard, setActiveCard] = useState("GiftCards");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = localStorage.getItem("user_token");
+
+    if (user === null) {
+      navigate("/login");
+    }
+  }, []);
 
   return (
     <LandingLayout>
