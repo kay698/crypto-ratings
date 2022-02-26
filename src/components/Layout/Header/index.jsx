@@ -45,6 +45,11 @@ const LandingHeader = () => {
     }
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem("user_token");
+    navigate("/login");
+  };
+
   return (
     <HeaderWrap showMenu={showMenu}>
       <FlexibleDiv className="desktopHeader">
@@ -122,15 +127,16 @@ const LandingHeader = () => {
                 height="50px"
                 background="red"
                 boxShadow=" 0px 30px 70px rgba(232, 19, 19, 0.3);"
+                hover="red"
+                onClick={handleLogout}
               >
-                <Link to="/signup">
-                  Logout{" "}
-                  <AiOutlineLogout
-                    style={{
-                      marginBottom: "-3px",
-                    }}
-                  />
-                </Link>
+                Logout{" "}
+                <AiOutlineLogout
+                  style={{
+                    margin: "0 0 -3px 5px",
+                    color: "#fff",
+                  }}
+                />
               </Button>
             </FlexibleDiv>
           ) : (
