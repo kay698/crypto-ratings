@@ -162,10 +162,10 @@ const GiftcardCalculator = () => {
               &#8358; {formatMoney(finalQuantity || finalAmount)}
             </Typography.Title>
           </FlexibleDiv>
-          <Button type="primary" htmlType="submit" width="100%">
+          {/* <Button type="primary" htmlType="submit" width="100%">
             {isLoading && <LoadingOutlined />}
             Trade this card
-          </Button>
+          </Button> */}
         </>
       )}
     </RateCalculatorPage>

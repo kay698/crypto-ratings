@@ -118,7 +118,7 @@ const LandingHeader = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  Trade Card
+                  Cards
                 </Link>
               )}
 

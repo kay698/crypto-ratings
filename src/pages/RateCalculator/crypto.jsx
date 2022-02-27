@@ -118,14 +118,14 @@ const CryptoCalculator = () => {
               &#8358; {formatMoney(finalQuantity || finalAmount)}
             </Typography.Title>
           </FlexibleDiv>
-          <Button
+          {/* <Button
             type="primary"
             htmlType="submit"
             width="100%"
             loading={isLoading}
           >
             Trade this card
-          </Button>
+          </Button> */}
         </>
       )}
     </RateCalculatorPage>

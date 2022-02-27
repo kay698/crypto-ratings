@@ -87,7 +87,7 @@ const MobileNav = ({ setShowMenu, showMenu }) => {
                           navigate("/login");
                         }}
                       >
-                        Trade Card
+                        Cards
                       </Menu.Item>
                     )}
                   </>
