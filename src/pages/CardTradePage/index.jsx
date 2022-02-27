@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 import { getAllGiftCardCategories, getAllCrypto } from "../../network/cards";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useQuery } from "react-query";
-import { validateEmail } from "../../utils/functionLibraries";
 
 const CardTradePage = () => {
   const [page] = useState(`page=1&perPage=1000`);
@@ -84,7 +83,7 @@ const CardTradePage = () => {
               {(activeCard === "GiftCards"
                 ? giftcardList?.data
                 : crypoList?.data
-              ).map((item, idx) => (
+              )?.map((item, idx) => (
                 <FlexibleDiv key={idx}>
                   <img src={item.logo} />
                   <Button
