@@ -80,21 +80,33 @@ const CardTradePage = () => {
             </FlexibleDiv>
           ) : (
             <FlexibleDiv className="cardsWrap">
-              {(activeCard === "GiftCards"
-                ? giftcardList?.data
-                : crypoList?.data
-              )?.map((item, idx) => (
-                <FlexibleDiv key={idx}>
-                  <img src={item.logo} />
-                  <Button
-                    onClick={() => {
-                      getSingleCard(item);
-                    }}
-                  >
-                    Check Rate
-                  </Button>
+              {(!!giftcardList?.data?.length > 0 &&
+                activeCard === "GiftCards") ||
+              (crypoList?.data?.length > 0 &&
+                activeCard === "Cryptocurrency") ? (
+                <>
+                  {" "}
+                  {(activeCard === "GiftCards"
+                    ? giftcardList?.data
+                    : crypoList?.data
+                  )?.map((item, idx) => (
+                    <FlexibleDiv key={idx}>
+                      <img src={item.logo} />
+                      <Button
+                        onClick={() => {
+                          getSingleCard(item);
+                        }}
+                      >
+                        Check Rate
+                      </Button>
+                    </FlexibleDiv>
+                  ))}
+                </>
+              ) : (
+                <FlexibleDiv height="300px">
+                  <Typography.Title level={4}> No Cards Yet</Typography.Title>
                 </FlexibleDiv>
-              ))}
+              )}
             </FlexibleDiv>
           )}
         </FlexibleDiv>
