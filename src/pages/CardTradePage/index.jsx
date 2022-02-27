@@ -35,14 +35,10 @@ const CardTradePage = () => {
 
   const getSingleCard = (val) => {
     if (activeCard === "Cryptocurrency") {
-      navigate("/crypto-calculator");
+      navigate("/crypto-calculator", { state: { ...val } });
     } else {
-      navigate("/giftcards-calculator");
+      navigate("/giftcards-calculator", { state: { ...val } });
     }
-    localStorage.setItem(
-      "current_card",
-      JSON.stringify({ _id: val._id, cardType: activeCard })
-    );
   };
 
   return (
