@@ -111,7 +111,7 @@ const LandingFooter = () => {
                   height="35px"
                   alignItems="flex-start"
                 >
-                  <Link to="/rate-calculator">Rate Calculator</Link>
+                  <Link to="/giftcards-calculator">Rate Calculator</Link>
                   <Link to="/faq">FAQs</Link>
                 </FlexibleDiv>
                 <FlexibleDiv justifyContent="space-between">

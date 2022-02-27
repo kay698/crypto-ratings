@@ -34,7 +34,11 @@ const CardTradePage = () => {
   }, []);
 
   const getSingleCard = (val) => {
-    navigate("/rate-calculator");
+    if (activeCard === "Cryptocurrency") {
+      navigate("/crypto-calculator");
+    } else {
+      navigate("/giftcards-calculator");
+    }
     localStorage.setItem(
       "current_card",
       JSON.stringify({ _id: val._id, cardType: activeCard })

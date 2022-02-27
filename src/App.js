@@ -9,7 +9,8 @@ import ForgotPassword from "./pages/Auth/forgot-password";
 import FaqPage from "./pages/FaqPage";
 import ContactUsPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
-import RateCalculator from "./pages/RateCalculator";
+import GiftcardCalculator from "./pages/RateCalculator/giftcards";
+import CryptoCalculator from "./pages/RateCalculator/crypto";
 import CardTradePage from "./pages/CardTradePage";
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -29,7 +30,11 @@ function App() {
               <Route path="/faq" element={<FaqPage />} />
               <Route path="/contact-us" element={<ContactUsPage />} />
               <Route path="/about-us" element={<AboutPage />} />
-              <Route path="/rate-calculator" element={<RateCalculator />} />
+              <Route
+                path="/giftcards-calculator"
+                element={<GiftcardCalculator />}
+              />
+              <Route path="/crypto-calculator" element={<CryptoCalculator />} />
               <Route path="/trade-card" element={<CardTradePage />} />
               <Route path="/" element={<LandingPage />} />
             </Routes>
