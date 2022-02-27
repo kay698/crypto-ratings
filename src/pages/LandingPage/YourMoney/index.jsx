@@ -1,14 +1,15 @@
 import React from "react";
 import { YourMoneyWrapper } from "./styles";
 import { FlexibleDiv } from "../../../components/Box/styles";
-import Emojis from "../../../assets/svgs/emojis.svg";
+import Emojis from "../../../components/SvgAnimations/emojis";
 import { Typography } from "antd";
 
 const YourMoney = () => {
   return (
     <YourMoneyWrapper>
       <FlexibleDiv>
-        <img src={Emojis} />
+        {/* <img src={Emojis} /> */}
+        <Emojis />
         <FlexibleDiv className="textWrap" flexDir="column">
           <Typography.Title>
             It’s your Money <br />

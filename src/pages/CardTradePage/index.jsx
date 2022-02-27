@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LandingLayout from "../../components/Layout";
 import { FlexibleDiv } from "../../components/Box/styles";
 import { CardTradePageWrapper } from "./styles";
@@ -6,15 +6,39 @@ import { Typography } from "antd";
 import Button from "../../components/Button";
 import CheckLine from "../../assets/svgs/checkline.svg";
 import Star from "../../assets/svgs/star.svg";
-import {
-  giftCardList,
-  cryptoCardList,
-} from "../../utils/dataHelpers/rateCalculator";
 import { useNavigate } from "react-router-dom";
+import { getAllGiftCardCategories, getAllCrypto } from "../../network/cards";
+import { LoadingOutlined } from "@ant-design/icons";
+import { useQuery } from "react-query";
 
 const CardTradePage = () => {
+  const [page] = useState(`page=1&perPage=1000`);
   const [activeCard, setActiveCard] = useState("GiftCards");
+  let { isLoading, data: giftcardList } = useQuery(
+    "giftCards",
+    async () => await getAllGiftCardCategories(page)
+  );
+  let { isLoading: cryptoLoading, data: crypoList } = useQuery(
+    "crypto",
+    async () => await getAllCrypto(page)
+  );
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = localStorage.getItem("user_token");
+
+    if (user === null) {
+      navigate("/login");
+    }
+  }, []);
+
+  const getSingleCard = (val) => {
+    if (activeCard === "Cryptocurrency") {
+      navigate("/crypto-calculator", { state: { ...val } });
+    } else {
+      navigate("/giftcards-calculator", { state: { ...val } });
+    }
+  };
 
   return (
     <LandingLayout>
@@ -50,22 +74,29 @@ const CardTradePage = () => {
             )}
           </FlexibleDiv>
 
-          <FlexibleDiv className="cardsWrap">
-            {(activeCard === "GiftCards" ? giftCardList : cryptoCardList).map(
-              (item, idx) => (
+          {isLoading || cryptoLoading ? (
+            <FlexibleDiv height="300px">
+              <LoadingOutlined />
+            </FlexibleDiv>
+          ) : (
+            <FlexibleDiv className="cardsWrap">
+              {(activeCard === "GiftCards"
+                ? giftcardList?.data
+                : crypoList?.data
+              )?.map((item, idx) => (
                 <FlexibleDiv key={idx}>
                   <img src={item.logo} />
                   <Button
                     onClick={() => {
-                      navigate.push("/rate-calculator");
+                      getSingleCard(item);
                     }}
                   >
                     Check Rate
                   </Button>
                 </FlexibleDiv>
-              )
-            )}
-          </FlexibleDiv>
+              ))}
+            </FlexibleDiv>
+          )}
         </FlexibleDiv>
       </CardTradePageWrapper>
     </LandingLayout>

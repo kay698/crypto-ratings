@@ -9,10 +9,13 @@ import MobileNav from "./mobileNav";
 import { throttle } from "lodash";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import LogoWhite from "../../../assets/svgs/logo-white.svg";
+import { AiOutlineLogout } from "react-icons/ai";
+import { RiArrowGoBackLine } from "react-icons/ri";
 
 const LandingHeader = () => {
   const [navBackground, setNavBackground] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const handleShowMenu = () => setShowMenu(!showMenu);
@@ -34,6 +37,18 @@ const LandingHeader = () => {
       document.removeEventListener("scroll", throttle(handleScroll, 100));
     };
   }, []);
+
+  useEffect(() => {
+    const user = localStorage.getItem("user_token");
+    if (!!user) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user_token");
+    navigate("/login");
+  };
 
   return (
     <HeaderWrap showMenu={showMenu}>
@@ -76,26 +91,76 @@ const LandingHeader = () => {
               ))}
             </Menu>
           </FlexibleDiv>
-          <FlexibleDiv width="max-content" flexWrap="no-wrap">
-            <Link
-              to="/login"
-              className="login"
-              style={{
-                color: location.pathname === "/" ? "#fff" : "#006eef",
-              }}
-            >
-              Login
-            </Link>
-            {location.pathname === "/" ? (
-              <Button width="120px" height="50px" className="whiteButton">
-                <Link to="/signup">Register</Link>
+          {!!isLoggedIn ? (
+            <FlexibleDiv width="max-content" flexWrap="no-wrap">
+              {location.pathname === "/trade-card" ? (
+                <Link
+                  to="/"
+                  className="login"
+                  style={{
+                    color: "#006eef",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  <RiArrowGoBackLine
+                    style={{
+                      marginBottom: "-2px",
+                    }}
+                  />{" "}
+                  Go back to main website
+                </Link>
+              ) : (
+                <Link
+                  to="/trade-card"
+                  className="login"
+                  style={{
+                    color: location.pathname === "/" ? "#fff" : "#006eef",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Cards
+                </Link>
+              )}
+
+              <Button
+                width="120px"
+                height="50px"
+                background="red"
+                boxShadow=" 0px 30px 70px rgba(232, 19, 19, 0.3);"
+                hover="red"
+                onClick={handleLogout}
+              >
+                Logout{" "}
+                <AiOutlineLogout
+                  style={{
+                    margin: "0 0 -3px 5px",
+                    color: "#fff",
+                  }}
+                />
               </Button>
-            ) : (
-              <Button width="120px" height="50px">
-                <Link to="/signup">Register</Link>
-              </Button>
-            )}
-          </FlexibleDiv>
+            </FlexibleDiv>
+          ) : (
+            <FlexibleDiv width="max-content" flexWrap="no-wrap">
+              <Link
+                to="/login"
+                className="login"
+                style={{
+                  color: location.pathname === "/" ? "#fff" : "#006eef",
+                }}
+              >
+                Login
+              </Link>
+              {location.pathname === "/" ? (
+                <Button width="120px" height="50px" className="whiteButton">
+                  <Link to="/signup">Register</Link>
+                </Button>
+              ) : (
+                <Button width="120px" height="50px">
+                  <Link to="/signup">Register</Link>
+                </Button>
+              )}
+            </FlexibleDiv>
+          )}
         </FlexibleDiv>
       </FlexibleDiv>
       <FlexibleDiv className="mobileMenuWrap">

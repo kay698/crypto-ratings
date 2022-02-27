@@ -326,6 +326,18 @@ const validateLevel = (rule, value) => {
     }
   });
 };
+
+const getCurrncy = (cur) => {
+  let currency;
+  if (cur === "USD") {
+    currency = "/ $";
+  } else if (cur === "EUROS") {
+    currency = "/ €";
+  } else {
+    currency = "/ £";
+  }
+  return currency;
+};
 export {
   capitalizeWords,
   truncate,
@@ -343,4 +355,5 @@ export {
   formatCbtTime,
   formatTimeObject,
   languageConvert,
+  getCurrncy,
 };

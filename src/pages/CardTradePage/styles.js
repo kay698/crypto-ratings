@@ -33,8 +33,8 @@ export const CardTradePageWrapper = styled.div`
     padding-top: 70px;
     & > div {
       max-width: 280px;
-      min-height: 300px;
-      padding: 0 15px;
+      height: 300px;
+      padding: 20px 15px;
       background: #ffffff;
       border: 1px solid rgba(0, 110, 239, 0.3);
       box-sizing: border-box;
@@ -43,13 +43,12 @@ export const CardTradePageWrapper = styled.div`
       margin: 0 23px 30px 0;
 
       img {
-        width: 140%;
-        margin-top: -20px;
+        width: 95%;
+        height: auto;
       }
 
       .ant-btn {
         width: 95%;
-        margin: -60px 0 10px 0;
         background: rgba(0, 110, 239, 0.1);
         border: 1px solid rgba(0, 110, 239, 0.3);
         box-sizing: border-box;
@@ -68,18 +67,21 @@ export const CardTradePageWrapper = styled.div`
       & > div {
         width: 47%;
         max-width: 300px;
-        min-height: max-content;
+        height: max-content;
         padding: 0 10px;
         border-radius: 15px;
         margin: 0 0 30px 0;
         img {
-          margin-top: -15px;
+          width: 90%;
+          height: auto;
+        }
+        .ant-btn {
+          margin: 20px 0;
         }
       }
     }
     @media (max-width: 600px) {
       .ant-btn {
-        margin: -30px 0 20px 0 !important;
         height: 40px;
         border-radius: 10px !important;
 
@@ -89,11 +91,6 @@ export const CardTradePageWrapper = styled.div`
       }
     }
     @media (max-width: 400px) {
-      & > div {
-        img {
-          margin-top: 0;
-        }
-      }
       .ant-btn {
         height: 35px;
       }
