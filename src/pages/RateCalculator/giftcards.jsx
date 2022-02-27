@@ -105,7 +105,11 @@ const GiftcardCalculator = () => {
           </Form.Item>
 
           <Form.Item>
-            <Select placeholder="Select pricing" listHeight={1000}>
+            <Select
+              placeholder="Select pricing"
+              listHeight={1000}
+              value={giftCardRate?.title}
+            >
               {singleGifcardCategory?.giftcards?.map((value, index) => (
                 <Select.Option value={value.title} key={index}>
                   <FlexibleDiv
