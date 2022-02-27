@@ -12,7 +12,7 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { useQuery } from "react-query";
 
 const CardTradePage = () => {
-  const [page] = useState(`page=1&perPage=1000`);
+  const [page] = useState(`page=1&perPage=40`);
   const [activeCard, setActiveCard] = useState("GiftCards");
   let { isLoading, data: giftcardList } = useQuery(
     "giftCards",
@@ -79,23 +79,35 @@ const CardTradePage = () => {
               <LoadingOutlined />
             </FlexibleDiv>
           ) : (
-            <FlexibleDiv className="cardsWrap">
-              {(activeCard === "GiftCards"
-                ? giftcardList?.data
-                : crypoList?.data
-              )?.map((item, idx) => (
-                <FlexibleDiv key={idx}>
-                  <img src={item.logo} />
-                  <Button
-                    onClick={() => {
-                      getSingleCard(item);
-                    }}
-                  >
-                    Check Rate
-                  </Button>
+            <>
+              {(!!giftcardList?.data?.length > 0 &&
+                activeCard === "GiftCards") ||
+              (crypoList?.data?.length > 0 &&
+                activeCard === "Cryptocurrency") ? (
+                <FlexibleDiv className="cardsWrap">
+                  {" "}
+                  {(activeCard === "GiftCards"
+                    ? giftcardList?.data
+                    : crypoList?.data
+                  )?.map((item, idx) => (
+                    <FlexibleDiv key={idx}>
+                      <img src={item.logo} />
+                      <Button
+                        onClick={() => {
+                          getSingleCard(item);
+                        }}
+                      >
+                        Check Rate
+                      </Button>
+                    </FlexibleDiv>
+                  ))}
                 </FlexibleDiv>
-              ))}
-            </FlexibleDiv>
+              ) : (
+                <FlexibleDiv height="300px">
+                  <Typography.Title level={4}> No Cards Yet</Typography.Title>
+                </FlexibleDiv>
+              )}
+            </>
           )}
         </FlexibleDiv>
       </CardTradePageWrapper>
