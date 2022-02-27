@@ -132,7 +132,7 @@ export const RateCalculatorWrapper = styled.div`
     width: max-content;
     padding: 10px 10px;
     height: 50px;
-    background: #e0e0e0;
+    background: #dceefd;
     position: relative;
     justify-content: flex-start;
     border-radius: 10px;

@@ -12,22 +12,27 @@ import {
   giftCardList,
 } from "../../utils/dataHelpers/rateCalculator";
 import { useNavigate, useLocation } from "react-router-dom";
-import { getAllGiftCardCategories, getAllCrypto } from "../../network/cards";
+import {
+  getAllGiftCardCategories,
+  getAllCrypto,
+  getAllGiftCards,
+} from "../../network/cards";
 
 const RateCalculatorPage = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isPageLoading, setIsPageLoading] = useState(false);
   const [categoryLoading, setCategoryLoading] = useState(false);
   const location = useLocation();
-  const { state } = location;
-  const [activeCard, setActiveCard] = useState(
-    state?.card?.cardType || "Giftcards"
-  );
-  const [giftcardCategories, setCategory] = useState();
+  const [activeCard, setActiveCard] = useState("Giftcards");
+  const [giftcardCategories, setGiftcardCategory] = useState();
+  const [singleGifcard, setSingleGiftcard] = useState();
+  const [giftCardRate, setGiftcardRate] = useState();
+  const [cryptoList, setCryptoList] = useState();
+
   const navigate = useNavigate();
   const [form] = Form.useForm();
 
   const handleFormSubmit = () => {};
-
   useEffect(() => {
     const user = localStorage.getItem("user_token");
     if (user === null) {
@@ -37,16 +42,58 @@ const RateCalculatorPage = () => {
 
   const handleGiftCardCategories = async (val) => {
     const payload = `page=1&perPage=1000`;
-
+    setActiveCard("Giftcards");
     try {
       const { data } = await getAllGiftCardCategories(payload);
-      setCategory(data);
+      setGiftcardCategory(data);
     } catch (e) {
       console.log(e);
     }
-    // if(activeCard === "Giftcards")
   };
-  const selectCategory = (val) => {};
+  const handleCryptoList = async (val) => {
+    const payload = `page=1&perPage=1000`;
+    setActiveCard("Crypto");
+
+    try {
+      const { data } = await getAllCrypto(payload);
+      setCryptoList(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const current = JSON.parse(localStorage.getItem("current_card"));
+
+      if (current?.cardType === "Giftcards") {
+        await handleGiftCardCategories();
+        await getSingleGiftCardCategory(current);
+      } else {
+        await handleCryptoList();
+      }
+    };
+    fetchData();
+  }, []);
+
+  const getSingleGiftCardCategory = async (val) => {
+    const payload = {
+      giftCardCategoryId: val?._id,
+      page: 1,
+      perPage: 1000,
+    };
+    try {
+      const { data } = await getAllGiftCards(payload);
+      setSingleGiftcard(data);
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const getGiftcardRate = async (val) => {
+    setGiftcardRate(val);
+  };
 
   return (
     <LandingLayout>
@@ -74,78 +121,150 @@ const RateCalculatorPage = () => {
                     className={
                       activeCard === "Giftcards" ? "card active" : "card"
                     }
-                    onClick={() => setActiveCard("Giftcards")}
+                    onClick={handleGiftCardCategories}
                   >
                     <p>Giftcards</p>
                   </FlexibleDiv>
                   <FlexibleDiv
                     className={activeCard === "Crypto" ? "card active" : "card"}
                     margin="0 0 0 15px"
-                    onClick={() => setActiveCard("Crypto")}
+                    onClick={handleCryptoList}
                   >
                     <p>Cryptocurrency</p>
                   </FlexibleDiv>
                 </FlexibleDiv>
-                <Form.Item>
-                  <Select placeholder="Select card category" listHeight={1000}>
-                    {giftCardList.map((value, index) => (
-                      <Select.Option value={value.title} key={index}>
-                        <FlexibleDiv
-                          justifyContent="flex-start"
-                          style={{
-                            padding: "0 0 15px 0",
-                            borderBottom: "1px solid #eee",
-                          }}
-                        >
-                          {value.title}
-                        </FlexibleDiv>
-                      </Select.Option>
-                    ))}
-                  </Select>
-                </Form.Item>
-                {activeCard === "Giftcards" && (
-                  <Form.Item>
-                    <Select placeholder="Select pricing" listHeight={1000}>
-                      {cardCategories.map((value, index) => (
-                        <Select.Option value={value.title} key={index}>
-                          <FlexibleDiv
-                            justifyContent="flex-start"
-                            style={{
-                              padding: "0 0 15px 0",
-                              borderBottom: "1px solid #eee",
-                            }}
-                          >
-                            {value.title}
-                          </FlexibleDiv>
-                        </Select.Option>
-                      ))}
-                    </Select>
-                  </Form.Item>
+                {activeCard === "Giftcards" ? (
+                  <>
+                    <Form.Item>
+                      <Select
+                        placeholder="Select card category"
+                        listHeight={1000}
+                        value={singleGifcard?.title}
+                      >
+                        {giftcardCategories?.map((value, index) => (
+                          <Select.Option key={index}>
+                            <FlexibleDiv
+                              justifyContent="flex-start"
+                              style={{
+                                padding: "0 0 15px 0",
+                                borderBottom: "1px solid #eee",
+                              }}
+                              onClick={() => getSingleGiftCardCategory(value)}
+                            >
+                              {value.title}
+                            </FlexibleDiv>
+                          </Select.Option>
+                        ))}
+                      </Select>
+                    </Form.Item>
+
+                    <Form.Item>
+                      <Select placeholder="Select pricing" listHeight={1000}>
+                        {singleGifcard?.giftcards?.map((value, index) => (
+                          <Select.Option value={value.title} key={index}>
+                            <FlexibleDiv
+                              justifyContent="flex-start"
+                              style={{
+                                padding: "0 0 15px 0",
+                                borderBottom: "1px solid #eee",
+                              }}
+                              onClick={() => getGiftcardRate(value)}
+                            >
+                              {value.title}
+                            </FlexibleDiv>
+                          </Select.Option>
+                        ))}
+                      </Select>
+                    </Form.Item>
+
+                    <FlexibleDiv
+                      justifyContent="space-between"
+                      className="numbersWrap"
+                    >
+                      <Form.Item name="number">
+                        <Input
+                          autocomplete="off"
+                          placeholder="100"
+                          type="number"
+                        />
+                      </Form.Item>
+                      <Form.Item name="phoneNumber">
+                        <Input
+                          autocomplete="off"
+                          placeholder="5"
+                          type="number"
+                        />
+                      </Form.Item>
+                      <span className="currentTrading">
+                        Current trading rate:<span> #390 / $1</span>
+                      </span>
+                    </FlexibleDiv>
+
+                    <FlexibleDiv flexDir="column" margin="50px 0 20px 0">
+                      <small>You would get</small>
+                      <Typography.Title>&#8358; 195,000</Typography.Title>
+                    </FlexibleDiv>
+                    <Button type="primary" htmlType="submit" width="100%">
+                      {isLoading && <LoadingOutlined />}
+                      Trade this card
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Form.Item>
+                      <Select
+                        placeholder="Select card category"
+                        listHeight={1000}
+                      >
+                        {giftCardList.map((value, index) => (
+                          <Select.Option value={value.title} key={index}>
+                            <FlexibleDiv
+                              justifyContent="flex-start"
+                              style={{
+                                padding: "0 0 15px 0",
+                                borderBottom: "1px solid #eee",
+                              }}
+                            >
+                              {value.title}
+                            </FlexibleDiv>
+                          </Select.Option>
+                        ))}
+                      </Select>
+                    </Form.Item>
+
+                    <FlexibleDiv
+                      justifyContent="space-between"
+                      className="numbersWrap"
+                    >
+                      <Form.Item name="number">
+                        <Input
+                          autocomplete="off"
+                          placeholder="100"
+                          type="number"
+                        />
+                      </Form.Item>
+                      <Form.Item name="phoneNumber">
+                        <Input
+                          autocomplete="off"
+                          placeholder="5"
+                          type="number"
+                        />
+                      </Form.Item>
+                      <span className="currentTrading">
+                        Current trading rate:<span> #390 / $1</span>
+                      </span>
+                    </FlexibleDiv>
+
+                    <FlexibleDiv flexDir="column" margin="50px 0 20px 0">
+                      <small>You would get</small>
+                      <Typography.Title>&#8358; 195,000</Typography.Title>
+                    </FlexibleDiv>
+                    <Button type="primary" htmlType="submit" width="100%">
+                      {isLoading && <LoadingOutlined />}
+                      Trade this card
+                    </Button>
+                  </>
                 )}
-
-                <FlexibleDiv
-                  justifyContent="space-between"
-                  className="numbersWrap"
-                >
-                  <Form.Item name="number">
-                    <Input autocomplete="off" placeholder="100" type="number" />
-                  </Form.Item>
-                  <Form.Item name="phoneNumber">
-                    <Input autocomplete="off" placeholder="5" type="number" />
-                  </Form.Item>
-                  <span className="currentTrading">
-                    Current trading rate:<span> #390 / $1</span>
-                  </span>
-                </FlexibleDiv>
-
-                <FlexibleDiv flexDir="column" margin="50px 0 20px 0">
-                  <small>You would get</small>
-                  <Typography.Title>&#8358; 195,000</Typography.Title>
-                </FlexibleDiv>
-                <Button type="primary" htmlType="submit" width="100%">
-                  {isLoading && <LoadingOutlined />}
-                  Trade this card
-                </Button>
               </Form>
             </FlexibleDiv>
           </FlexibleDiv>

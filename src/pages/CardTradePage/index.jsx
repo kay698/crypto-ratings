@@ -34,9 +34,11 @@ const CardTradePage = () => {
   }, []);
 
   const getSingleCard = (val) => {
-    navigate("/rate-calculator", {
-      state: { card: { id: val._id, cardType: activeCard } },
-    });
+    navigate("/rate-calculator");
+    localStorage.setItem(
+      "current_card",
+      JSON.stringify({ _id: val._id, cardType: activeCard })
+    );
   };
 
   return (
@@ -74,7 +76,7 @@ const CardTradePage = () => {
           </FlexibleDiv>
 
           {isLoading || cryptoLoading ? (
-            <FlexibleDiv className="cardsWrap">
+            <FlexibleDiv height="300px">
               <LoadingOutlined />
             </FlexibleDiv>
           ) : (
