@@ -55,7 +55,7 @@ const ContactUsPage = () => {
               Get in touch with
               <br /> us from anywhere
             </Typography.Title>
-            <Button width="max-content">Speak to a customer care agent</Button>
+            {/* <Button width="max-content">Speak to a customer care agent</Button> */}
 
             <a href="tel: +2347041488189">+234 (0)704 148 8189</a>
             <a href="mailto: iratersworld@gmail.com">iratersworld@gmail.com</a>

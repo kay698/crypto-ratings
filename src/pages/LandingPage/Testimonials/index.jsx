@@ -19,7 +19,7 @@ const Testimonials = () => {
 
         <FlexibleDiv
           className="commentsWrap"
-          justifyContent="flex-start"
+          // justifyContent="flex-start"
           width="95%"
         >
           <FlexibleDiv className="overlay"></FlexibleDiv>

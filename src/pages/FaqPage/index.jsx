@@ -14,9 +14,9 @@ const FaqPage = () => {
         <FlexibleDiv justifyContent="flex-start" alignItems="flex-start">
           <Typography.Title>
             Frequently &nbsp;
-            <Button width="max-content">
+            {/* <Button width="max-content">
               Speak to a customer care agent
-            </Button>{" "}
+            </Button>{" "} */}
             <br />
             Asked Questions
           </Typography.Title>
