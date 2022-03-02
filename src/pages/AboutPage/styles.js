@@ -48,11 +48,16 @@ export const AboutWrapper = styled.div`
       max-width: 500px;
       border-radius: 40px;
       height: max-content;
-      min-height: 320px;
+      min-height: 300px;
       padding: 30px;
       position: relative;
       h3 {
         color: #050bac !important;
+      }
+      p {
+        color: #050bac !important;
+        font-size: 20px;
+        text-align: center;
       }
 
       .image {

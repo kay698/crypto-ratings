@@ -35,6 +35,11 @@ const AboutPage = () => {
 
             <FlexibleDiv className="aboutCard cardOne" alignItems="flex-start">
               <Typography.Title level={3}>Our Mission</Typography.Title>
+              <p>
+                Our mission is to become solution providers to individuals or
+                brands having difficulties in turning their digital assets into
+                instant cash.
+              </p>
               <FlexibleDiv className="image">
                 <img src={Mission} />
               </FlexibleDiv>
@@ -43,6 +48,10 @@ const AboutPage = () => {
           <FlexibleDiv className="rightSection">
             <FlexibleDiv className="aboutCard cardTwo" alignItems="flex-start">
               <Typography.Title level={3}>Our Values</Typography.Title>
+              <p>
+                Our core value is customer satisfaction through Integrity,
+                honesty and excellence.
+              </p>
               <FlexibleDiv className="image">
                 <img src={Values} />
               </FlexibleDiv>
@@ -53,6 +62,10 @@ const AboutPage = () => {
                 alignItems="flex-start"
               >
                 <Typography.Title level={3}>Our Vision</Typography.Title>
+                <p>
+                  Our vision is to be among the top 3 digital assets brands in
+                  the Africa within the shortest period of time
+                </p>
                 <FlexibleDiv className="image">
                   <img src={Vision} />
                 </FlexibleDiv>
