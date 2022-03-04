@@ -6,7 +6,7 @@ import { Typography } from "antd";
 
 const YourMoney = () => {
   return (
-    <YourMoneyWrapper>
+    <YourMoneyWrapper id="your_money">
       <FlexibleDiv>
         {/* <img src={Emojis} /> */}
         <Emojis />

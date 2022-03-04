@@ -6,7 +6,7 @@ import { bottomCards, topCards } from "../../../utils/dataHelpers/landingPage";
 
 const CardsRange = () => {
   return (
-    <CardsRangeWrapper>
+    <CardsRangeWrapper className="cards_range">
       <FlexibleDiv>
         <FlexibleDiv className="textWrap" flexDir="column">
           <Typography.Title>

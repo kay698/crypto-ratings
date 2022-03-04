@@ -3,6 +3,7 @@ import { LayoutWrap } from "./styles";
 import LandingHeader from "./Header";
 import LandingFooter from "./Footer";
 import "antd/dist/antd.css";
+// import { comingSoonIn, comingSoonOut } from "../../animations/coming_soon";
 
 const LandingLayout = ({ noPadding, children }) => {
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FooterWrap } from "./styles";
 import { FlexibleDiv } from "../../Box/styles";
 import { Link } from "react-router-dom";
@@ -12,11 +12,16 @@ import Hetical from "../../../assets/pngs/hetical.png";
 import Button from "../../Button";
 import Input from "../../TextField";
 import { Twitter, Instagram, Facebook } from "../../../assets/svgs/exports";
+import { comingSoonIn } from "../../../animations/comin_soon";
 
 const LandingFooter = () => {
+  useEffect(() => {
+    comingSoonIn();
+  }, []);
+
   const { Title, Text, Paragraph } = Typography;
   return (
-    <FooterWrap>
+    <FooterWrap id="coming_soon">
       <FlexibleDiv flexDir="column">
         {/* coming soon section */}
         <FlexibleDiv
@@ -124,14 +129,14 @@ const LandingFooter = () => {
                 <p>+234 (0)704 148 8189</p>
                 <p>iratersworld@gmail.com</p>
                 <FlexibleDiv justifyContent="space-between" width="150px">
-                  <a href="/">
+                  <a href="https://www.facebook.com/iraters.ng">
                     <Facebook />
                   </a>
-                  <a href="/">
+                  <a href="https://www.instagram.com/iraters.ng/">
                     <Instagram />
                   </a>
 
-                  <a href="/">
+                  <a href="https://twitter.com/iratersn">
                     <Twitter />
                   </a>
                 </FlexibleDiv>

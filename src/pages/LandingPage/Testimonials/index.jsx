@@ -7,7 +7,7 @@ import { IoLogoInstagram as Instagram } from "react-icons/io";
 
 const Testimonials = () => {
   return (
-    <TestimonialsWrapper>
+    <TestimonialsWrapper id="testimonials">
       <FlexibleDiv>
         <FlexibleDiv className="textWrap" flexDir="column">
           <Typography.Title>
