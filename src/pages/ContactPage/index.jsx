@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LandingLayout from "../../components/Layout";
 import { ContactUsWrapper } from "./styles";
 import { FlexibleDiv } from "../../components/Box/styles";
-import { validateEmail, validatePhone } from "../../utils/functionLibraries";
-import { Collapse, Typography, Form, notification } from "antd";
+import { Typography, notification } from "antd";
 import Button from "../../components/Button";
 import { SmileOutlined, LoadingOutlined } from "@ant-design/icons";
 import Input from "../../components/TextField";
 import { Twitter, Instagram, Facebook } from "../../assets/svgs/exports";
 import emailjs from "emailjs-com";
+import { aboutUsIn } from "../../animations/about_us";
+import splitting from "splitting";
 
 const ContactUsPage = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const { Panel } = Collapse;
+  useEffect(() => {
+    setTimeout(() => {
+      splitting({
+        by: "words",
+        target: "#about_us [data-splitting]",
+      });
+      aboutUsIn();
+    }, 0);
+  }, []);
 
   const onReset = () => {
     document.getElementById("myform").reset();
@@ -50,10 +59,10 @@ const ContactUsPage = () => {
 
   return (
     <LandingLayout>
-      <ContactUsWrapper>
+      <ContactUsWrapper id="about_us">
         <FlexibleDiv justifyContent="space-between" alignItems="flex-start">
           <FlexibleDiv className="leftSection" flexDir="column">
-            <Typography.Title>
+            <Typography.Title data-splitting="">
               Get in touch with
               <br /> us from anywhere
             </Typography.Title>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LandingLayout from "../../components/Layout";
 import { FlexibleDiv } from "../../components/Box/styles";
 import { AboutWrapper } from "./styles";
@@ -6,14 +6,26 @@ import { Typography } from "antd";
 import Mission from "../../assets/svgs/mission.svg";
 import Values from "../../assets/svgs/values.svg";
 import Vision from "../../assets/svgs/vision.svg";
+import { aboutUsIn } from "../../animations/about_us";
+import splitting from "splitting";
 
 const AboutPage = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      splitting({
+        by: "words",
+        target: "#about_us [data-splitting]",
+      });
+      aboutUsIn();
+    }, 0);
+  }, []);
+
   return (
     <LandingLayout>
-      <AboutWrapper>
+      <AboutWrapper id="about_us">
         <FlexibleDiv className="wrap" alignItems="flex-start">
           <FlexibleDiv className="leftSection" flexDir="column">
-            <Typography.Title>
+            <Typography.Title data-splitting="">
               We are iRaters and <br />
               we’re here built to serve you better
             </Typography.Title>

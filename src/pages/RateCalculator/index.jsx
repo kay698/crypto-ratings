@@ -5,6 +5,8 @@ import { RateCalculatorWrapper } from "./styles";
 import { Typography, Form } from "antd";
 import Rateimage from "../../assets/svgs/rate.svg";
 import { useNavigate, useLocation } from "react-router-dom";
+import { aboutUsIn } from "../../animations/about_us";
+import splitting from "splitting";
 
 const RateCalculatorPage = ({ children }) => {
   const location = useLocation();
@@ -18,6 +20,15 @@ const RateCalculatorPage = ({ children }) => {
       navigate("/login");
     }
   }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      splitting({
+        by: "words",
+        target: "#about_us [data-splitting]",
+      });
+      aboutUsIn();
+    }, 0);
+  }, []);
 
   useEffect(() => {
     if (location.pathname === "/giftcards-calculator") {
@@ -29,14 +40,14 @@ const RateCalculatorPage = ({ children }) => {
 
   return (
     <LandingLayout>
-      <RateCalculatorWrapper>
+      <RateCalculatorWrapper id="about_us">
         <FlexibleDiv className="calculatorWrap" alignItems="flex-start">
           <FlexibleDiv className="leftSection" flexDir="column">
             <p>
               Not sure how much you would get for your card or bitcoin trade?
               With our rate calcuator you can –
             </p>
-            <Typography.Title>
+            <Typography.Title data-splitting="">
               Check your Giftcards & Bitcoin Rate!
             </Typography.Title>
 
