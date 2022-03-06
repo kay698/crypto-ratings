@@ -22,10 +22,12 @@ const ContactUsPage = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+
     const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
     const userID = process.env.REACT_APP_EMAILJS_USER_ID;
     const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-
+    console.log(e.target);
     await emailjs.sendForm(serviceID, templateID, e.target, userID).then(
       (result) => {
         notification.open({
@@ -34,6 +36,7 @@ const ContactUsPage = () => {
             "Thanks for reaching out, I will get back to you shorlty.",
           icon: <SmileOutlined style={{ color: "green" }} />,
         });
+        setIsLoading(false);
       },
       (error) => {
         notification.open({
@@ -41,6 +44,7 @@ const ContactUsPage = () => {
           description: error.text,
           icon: <SmileOutlined style={{ color: "red" }} />,
         });
+        setIsLoading(false);
       }
     );
     onReset();
@@ -79,19 +83,15 @@ const ContactUsPage = () => {
           <FlexibleDiv className="rightSection">
             <FlexibleDiv className="authForm">
               <form id="myForm" onSubmit={handleFormSubmit}>
+                <Input name={"firstname"} placeholder="First Name" required />
                 <Input
-                  name={"from_firstname"}
-                  placeholder="First Name"
-                  required
-                />
-                <Input
-                  name={"from_lastname"}
+                  name={"lastname"}
                   placeholder="Last Name"
                   required
                 />{" "}
-                <Input name={"from_email"} placeholder="Email" required />
+                <Input name={"email"} placeholder="Email" required />
                 <Input.TextArea
-                  name={"from_message"}
+                  name={"message"}
                   placeholder="Message*"
                   required
                 ></Input.TextArea>
