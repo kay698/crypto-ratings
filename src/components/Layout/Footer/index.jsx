@@ -60,6 +60,7 @@ const LandingFooter = () => {
                 </small>
               </FlexibleDiv>
             </FlexibleDiv>
+
             <FlexibleDiv
               flexWrap="nowrap"
               justifyContent="space-between"

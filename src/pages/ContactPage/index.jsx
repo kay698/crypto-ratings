@@ -27,7 +27,6 @@ const ContactUsPage = () => {
     const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
     const userID = process.env.REACT_APP_EMAILJS_USER_ID;
     const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-    console.log(e.target);
     await emailjs.sendForm(serviceID, templateID, e.target, userID).then(
       (result) => {
         notification.open({
@@ -82,7 +81,7 @@ const ContactUsPage = () => {
           </FlexibleDiv>
           <FlexibleDiv className="rightSection">
             <FlexibleDiv className="authForm">
-              <form id="myForm" onSubmit={handleFormSubmit}>
+              <form id="myform" onSubmit={handleFormSubmit}>
                 <Input name={"firstname"} placeholder="First Name" required />
                 <Input
                   name={"lastname"}
@@ -100,63 +99,6 @@ const ContactUsPage = () => {
                   Send Message
                 </Button>
               </form>
-              {/* <Form
-                form={form}
-                onFinish={handleFormSubmit}
-                autocomplete="off"
-                id="myform"
-              >
-                <Form.Item
-                  name="firstName"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please enter your first name",
-                    },
-                  ]}
-                >
-                  <Input autocomplete="off" placeholder="First Name" />
-                </Form.Item>
-                <Form.Item
-                  name="lastName"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please enter your last name",
-                    },
-                  ]}
-                >
-                  <Input autocomplete="off" placeholder="Last Name" />
-                </Form.Item>
-                <Form.Item name="email" rules={[{ validator: validateEmail }]}>
-                  <Input autocomplete="off" placeholder="Email" />
-                </Form.Item>
-                <Form.Item
-                  name="phoneNumber"
-                  rules={[{ validator: validatePhone }]}
-                >
-                  <Input
-                    autocomplete="off"
-                    placeholder="Phone Number"
-                    type="number"
-                  />
-                </Form.Item>
-                <Form.Item
-                  name="message"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please enter your message",
-                    },
-                  ]}
-                >
-                  <Input.TextArea autocomplete="off" placeholder="Messsage" />
-                </Form.Item>
-                <Button type="primary" htmlType="submit" width="100%">
-                  {isLoading && <LoadingOutlined />}
-                  Send Message
-                </Button>
-              </Form> */}
             </FlexibleDiv>
           </FlexibleDiv>
         </FlexibleDiv>
