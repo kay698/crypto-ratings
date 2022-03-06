@@ -78,7 +78,29 @@ const ContactUsPage = () => {
           </FlexibleDiv>
           <FlexibleDiv className="rightSection">
             <FlexibleDiv className="authForm">
-              <Form
+              <form id="myForm" onSubmit={handleFormSubmit}>
+                <Input
+                  name={"from_firstname"}
+                  placeholder="First Name"
+                  required
+                />
+                <Input
+                  name={"from_lastname"}
+                  placeholder="Last Name"
+                  required
+                />{" "}
+                <Input name={"from_email"} placeholder="Email" required />
+                <Input.TextArea
+                  name={"from_message"}
+                  placeholder="Message*"
+                  required
+                ></Input.TextArea>
+                <Button type="primary" htmlType="submit" width="100%">
+                  {isLoading && <LoadingOutlined />}
+                  Send Message
+                </Button>
+              </form>
+              {/* <Form
                 form={form}
                 onFinish={handleFormSubmit}
                 autocomplete="off"
@@ -134,7 +156,7 @@ const ContactUsPage = () => {
                   {isLoading && <LoadingOutlined />}
                   Send Message
                 </Button>
-              </Form>
+              </Form> */}
             </FlexibleDiv>
           </FlexibleDiv>
         </FlexibleDiv>

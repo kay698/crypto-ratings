@@ -42,7 +42,7 @@ export const ContactUsWrapper = styled.div`
       overflow: hidden;
       border: 1px solid rgba(0, 110, 239, 0.3);
 
-      .ant-form {
+      form {
         width: 100%;
 
         .ant-input {
@@ -51,6 +51,7 @@ export const ContactUsWrapper = styled.div`
           border: none;
           border-radius: 10px;
           font-size: 14px;
+          margin-bottom: 20px;
         }
 
         textarea {
