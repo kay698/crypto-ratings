@@ -12,7 +12,6 @@ import emailjs from "emailjs-com";
 
 const ContactUsPage = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [form] = Form.useForm();
 
   const { Panel } = Collapse;
 

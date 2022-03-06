@@ -114,11 +114,15 @@ export const FooterWrap = styled.div`
         .formWrap {
           flex-direction: column;
           height: max-content;
-          padding: 20px 0;
-          .ant-btn,
+          margin: 20px 0;
+
           .ant-input {
             width: 100%;
-            margin: 10px;
+            margin: 20px 0 10px 0;
+          }
+          .ant-btn {
+            width: 100%;
+            margin: 10px 0;
           }
         }
       }
