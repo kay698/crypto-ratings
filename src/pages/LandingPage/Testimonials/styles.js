@@ -34,6 +34,7 @@ export const TestimonialsWrapper = styled.div`
       position: absolute;
       height: 100%;
       background-image: linear-gradient(180deg, rgba(245, 252, 255, 0) 0%, #F5FCFF 100%););
+      z-index: 99999;
     }
     .comment {
       flex-wrap: nowrap;
@@ -43,6 +44,7 @@ export const TestimonialsWrapper = styled.div`
       background: #f2f2f2;
       border-radius: 20px;
       margin: 10px;
+      transition: all .3s ease;
 
       @media (max-width: 1120px) {
         max-width: 350px;

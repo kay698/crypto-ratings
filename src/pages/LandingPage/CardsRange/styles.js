@@ -20,7 +20,7 @@ export const CardsRangeWrapper = styled.div`
     }
   }
   .rows-wrap {
-    transform: rotate(-2deg);
+    transform: rotate(-1.5deg);
   }
   .row {
     height: max-content;
