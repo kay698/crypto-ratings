@@ -30,19 +30,13 @@ const AboutPage = () => {
               we’re here built to serve you better
             </Typography.Title>
             <p>
-              iRaters was founded in Lorem Ipsum. We are one of the fastest
+              iRaters was founded in Oct 19th, 2020. We are one of the fastest
               growing giftcard and crypto trading company in Nigeria.
               <br /> <br />
               Trade your Giftcards & Bitcoin for Cash Instantly. Trading your
               giftcards & bitcoin for cash has never been easy. Trade securely
               with no worries or delay. Receive alert of your trades in less
               than 2 mins.
-              <br /> <br />
-              Trade your Giftcards & Bitcoin for Cash Instantly. Trading your
-              giftcards & bitcoin for cash has never been easy. Trade securely
-              with no worries or delay. Receive alert of your trades in less
-              than 2 mins. Trade your Giftcards & Bitcoin for Cash Instantly.
-              Trading your giftcards & bitcoin for cash has never been easy.
             </p>
 
             <FlexibleDiv className="aboutCard cardOne" alignItems="flex-start">
@@ -76,7 +70,7 @@ const AboutPage = () => {
                 <Typography.Title level={3}>Our Vision</Typography.Title>
                 <p>
                   Our vision is to be among the top 3 digital assets brands in
-                  the Africa within the shortest period of time
+                  Africa within the shortest period of time
                 </p>
                 <FlexibleDiv className="image">
                   <img src={Vision} />

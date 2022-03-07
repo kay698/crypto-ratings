@@ -17,7 +17,7 @@ export const faqs = [
   {
     question: "HOW IS YOUR  RATE LIKE?",
     answer:
-      "Our rate is juicy qnd second to none. Click on the RATE CALCULATOR button to check out our rates.",
+      "Our rate is juicy and second to none. Click on the RATE CALCULATOR button to check out our rates.",
   },
   {
     question: "WHAT IS AN ECODE?",

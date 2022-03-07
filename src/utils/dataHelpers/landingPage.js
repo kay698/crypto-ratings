@@ -536,14 +536,14 @@ export const safetyData = [
   },
   {
     content:
-      "Trusted by thousands globally for its secure platform, we are confident to say that your crypto is in the right hands",
-    title: "Bitcoin & Giftcards trading just got safer",
+      "Every customer is treated like a King. We boast of 1200 + reviews from our loyal customers.",
+    title: "World Class Customer Experience",
     image: Bitcoin,
   },
   {
     content:
-      "Trusted by thousands globally for its secure platform, we are confident to say that your crypto is in the right hands",
-    title: "Trade, Relax & Get paid instantly.",
+      "We offer high rates on all rates and very fast payouts. You’ll be in and out like the breeze",
+    title: "Trade, Relax and get paid instantly.",
     image: Trade,
   },
 ];
