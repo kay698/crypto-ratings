@@ -20,6 +20,7 @@ const Testimonials = () => {
     sponsorAnimation.from(".comment", {
       boxShadow: "none",
       transform: "rotate(0deg)",
+
       scrollTrigger: {
         scrub: true,
       },
