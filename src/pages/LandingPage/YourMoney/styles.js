@@ -45,11 +45,11 @@ export const YourMoneyWrapper = styled.div`
     border-radius: 100%;
     border: 2px solid #6bbb99;
     mix-blend-mode: difference;
-    z-index: 2;
     user-select: none;
     pointer-events: none;
     transform: translate(5px, 5px);
     position: absolute;
-    background: #6bbb99;
+    background: #52d5ec5d;
+    z-index: 3;
   }
 `;
