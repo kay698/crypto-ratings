@@ -129,6 +129,7 @@ const LandingHeader = () => {
                 boxShadow=" 0px 30px 70px rgba(232, 19, 19, 0.3);"
                 hover="red"
                 onClick={handleLogout}
+                margin="0 0 -20px "
               >
                 Logout{" "}
                 <AiOutlineLogout

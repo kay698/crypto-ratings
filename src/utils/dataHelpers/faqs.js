@@ -1,62 +1,36 @@
 export const faqs = [
   {
-    question: "How can I trade my card?",
+    question: "HOPE I WON'T GET RIPPED?",
     answer:
-      "You use the floating icon to initate a chat with an online customer.Trading is fast and takes less than 10 minutes and payment is very much instant.",
+      " Trade with high confidence, as we assure you the highest level of security on all your transactions.",
   },
   {
-    question: "Hope I won’t get ripped?",
+    question: "WHAT KIND OF GIFTCARDS DO YOU BUY?",
     answer:
-      "You use the floating icon to initate a chat with an online customer.Trading is fast and takes less than 10 minutes and payment is very much instant.",
+      "We buy all kinds of gift cards from different countries, ranging from Steam wallet,  Google play, Amazon, Apple/Itunes, Nordstrom,  Vanilla, Ebay, Walmart, American Express,  Sephora, Macy, Xbox, OneVanilla, Razer Gold, etc.",
   },
   {
-    question: "What kind of Giftcards do you buy?",
+    question: "ARE YOUR CUSTOMER CARE AGENT ALWAYS ACTIVE?",
     answer:
-      "You use the floating icon to initate a chat with an online customer.Trading is fast and takes less than 10 minutes and payment is very much instant.",
+      "YES! We run a 24/7 service and our customer care agents are always available to help resolve all your complaints.",
   },
   {
-    question: "Are your customer care agent always online?",
+    question: "HOW IS YOUR  RATE LIKE?",
     answer:
-      "You use the floating icon to initate a chat with an online customer.Trading is fast and takes less than 10 minutes and payment is very much instant.",
+      "Our rate is juicy qnd second to none. Click on the RATE CALCULATOR button to check out our rates.",
   },
   {
-    question: "Why have I not I been credited up till now?",
+    question: "WHAT IS AN ECODE?",
     answer:
-      "You use the floating icon to initate a chat with an online customer.Trading is fast and takes less than 10 minutes and payment is very much instant.",
+      "eCode gift cards are virtual gift cards popular in this age. The card is delivered to the receiver via text messages or emails. The eCode is a pin code that is inputed on the checkout web page when you make purchases.",
   },
   {
-    question: "What is rate?",
+    question: "HOW FAST IS PAYMENT?",
     answer:
-      "You use the floating icon to initate a chat with an online customer.Trading is fast and takes less than 10 minutes and payment is very much instant.",
+      "Using state-of-the-art payment procedures, you are guaranteed to get your payment sent to your account within minutes.",
   },
   {
-    question: "What is an Ecode?",
-    answer:
-      "You use the floating icon to initate a chat with an online customer.Trading is fast and takes less than 10 minutes and payment is very much instant.",
-  },
-  {
-    question: "How fast is payment?",
-    answer:
-      "You use the floating icon to initate a chat with an online customer.Trading is fast and takes less than 10 minutes and payment is very much instant.",
-  },
-  {
-    question: "How fast can my trade be?",
-    answer:
-      "You use the floating icon to initate a chat with an online customer.Trading is fast and takes less than 10 minutes and payment is very much instant.",
-  },
-  {
-    question: "What giftcards are accepted on iRaters?",
-    answer:
-      "You use the floating icon to initate a chat with an online customer.Trading is fast and takes less than 10 minutes and payment is very much instant.",
-  },
-  {
-    question: "What cryptocurrencies are accepted on iRaters?",
-    answer:
-      "You use the floating icon to initate a chat with an online customer.Trading is fast and takes less than 10 minutes and payment is very much instant.",
-  },
-  {
-    question: "I am yet to receive my payment, what do I do?",
-    answer:
-      "You use the floating icon to initate a chat with an online customer.Trading is fast and takes less than 10 minutes and payment is very much instant.",
+    question: "WHAT CRYPTOCURRENCIES DO YOU ACCEPT?",
+    answer: "We accept Bitcoin, USDT, and Ethereum.",
   },
 ];

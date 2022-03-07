@@ -183,3 +183,20 @@ h1 {
     font-size: 30px !important;
   }
 }
+.cursor {
+  width: 50px;
+  height: 50px;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform-origin: 100% 100%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  z-index: 3;
+  background-color: #52d5ec5d;
+}
+
+/* .scale-cursor {
+    background: white;
+  } */

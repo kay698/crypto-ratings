@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FooterWrap } from "./styles";
 import { FlexibleDiv } from "../../Box/styles";
 import { Link } from "react-router-dom";
@@ -12,11 +12,52 @@ import Hetical from "../../../assets/pngs/hetical.png";
 import Button from "../../Button";
 import Input from "../../TextField";
 import { Twitter, Instagram, Facebook } from "../../../assets/svgs/exports";
+import { comingSoonIn } from "../../../animations/comin_soon";
+import { notification } from "antd";
+import { SmileOutlined } from "@ant-design/icons";
+import emailjs from "emailjs-com";
 
 const LandingFooter = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onReset = () => {
+    document.getElementById("myform").reset();
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const userID = process.env.REACT_APP_EMAILJS_USER_ID;
+    const templateID = process.env.REACT_APP_EMAILJS_WAITLIST_TEMPLATE_ID;
+    await emailjs.sendForm(serviceID, templateID, e.target, userID).then(
+      (result) => {
+        notification.open({
+          message: "Hi There",
+          description: "Thanks For Joining Our Waitlist",
+          icon: <SmileOutlined style={{ color: "green" }} />,
+        });
+        setIsLoading(false);
+      },
+      (error) => {
+        notification.open({
+          message: "Error",
+          description: error.text,
+          icon: <SmileOutlined style={{ color: "red" }} />,
+        });
+        setIsLoading(false);
+      }
+    );
+    onReset();
+  };
+  useEffect(() => {
+    comingSoonIn();
+  }, []);
+
   const { Title, Text, Paragraph } = Typography;
   return (
-    <FooterWrap>
+    <FooterWrap id="coming_soon">
       <FlexibleDiv flexDir="column">
         {/* coming soon section */}
         <FlexibleDiv
@@ -55,14 +96,28 @@ const LandingFooter = () => {
                 </small>
               </FlexibleDiv>
             </FlexibleDiv>
-            <FlexibleDiv
-              flexWrap="nowrap"
-              justifyContent="space-between"
-              height="150px"
-              className="formWrap"
-            >
-              <Input width="65%" placeholder="Email Address" />
-              <Button width="200px">Join our App waitlist</Button>
+
+            <FlexibleDiv flexWrap="nowrap" height="150px">
+              <form
+                id="myform"
+                onSubmit={handleFormSubmit}
+                className="formWrap"
+                style={{
+                  display: "flex",
+                  width: "100%",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Input
+                  width="65%"
+                  placeholder="Email Address"
+                  name={"email"}
+                  required
+                />
+                <Button width="200px" loading={isLoading} htmlType="submit">
+                  Join our App waitlist
+                </Button>
+              </form>
             </FlexibleDiv>
           </FlexibleDiv>
 
@@ -124,14 +179,14 @@ const LandingFooter = () => {
                 <p>+234 (0)704 148 8189</p>
                 <p>iratersworld@gmail.com</p>
                 <FlexibleDiv justifyContent="space-between" width="150px">
-                  <a href="/">
+                  <a href="https://www.facebook.com/iraters.ng">
                     <Facebook />
                   </a>
-                  <a href="/">
+                  <a href="https://www.instagram.com/iraters.ng/">
                     <Instagram />
                   </a>
 
-                  <a href="/">
+                  <a href="https://twitter.com/iratersn">
                     <Twitter />
                   </a>
                 </FlexibleDiv>

@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 import { getAllGiftCardCategories, getAllCrypto } from "../../network/cards";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useQuery } from "react-query";
+import { aboutUsIn } from "../../animations/about_us";
+import splitting from "splitting";
 
 const CardTradePage = () => {
   const [page] = useState(`page=1&perPage=40`);
@@ -32,6 +34,16 @@ const CardTradePage = () => {
     }
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      splitting({
+        by: "words",
+        target: "#about_us [data-splitting]",
+      });
+      aboutUsIn();
+    }, 0);
+  }, []);
+
   const getSingleCard = (val) => {
     if (activeCard === "Cryptocurrency") {
       navigate("/crypto-calculator", { state: { ...val } });
@@ -42,7 +54,7 @@ const CardTradePage = () => {
 
   return (
     <LandingLayout>
-      <CardTradePageWrapper>
+      <CardTradePageWrapper id="about_us">
         <FlexibleDiv>
           <FlexibleDiv justifyContent="space-between">
             <FlexibleDiv
@@ -52,7 +64,7 @@ const CardTradePage = () => {
               className="leftHeader"
             >
               <p>The Best Plug to –</p>
-              <Typography.Title>
+              <Typography.Title data-splitting="">
                 Trade your <span>{activeCard}</span>{" "}
                 <img alt="" src={Star} className="star" />
                 <br /> for Cash Instantly.

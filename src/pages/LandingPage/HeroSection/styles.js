@@ -7,7 +7,7 @@ export const HeroSectionWrapper = styled.div`
   background: #050bac;
   box-sizing: border-box;
 
-  .heroSection {
+  .heroWrap {
     max-width: 700px;
     width: 90%;
     position: relative;
@@ -60,7 +60,7 @@ export const HeroSectionWrapper = styled.div`
   }
   @media (max-width: 750px) {
     padding: 100px 0 50px 0;
-    .heroSection {
+    .heroWrap {
       .star {
         position: absolute;
         width: 6%;

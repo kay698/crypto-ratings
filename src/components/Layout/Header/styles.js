@@ -91,6 +91,9 @@ export const HeaderWrap = styled.div`
               height: 4px;
             }
           }
+          :active {
+            background: transparent;
+          }
         }
       }
     }

@@ -19,7 +19,9 @@ export const CardsRangeWrapper = styled.div`
       margin: 0;
     }
   }
-
+  .rows-wrap {
+    transform: rotate(-1.5deg);
+  }
   .row {
     height: max-content;
     div {

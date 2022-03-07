@@ -1,22 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LandingLayout from "../../components/Layout";
 import { FaqWrapper } from "./styles";
 import { FlexibleDiv } from "../../components/Box/styles";
 import { faqs } from "../../utils/dataHelpers/faqs";
 import { Collapse, Typography } from "antd";
 import Button from "../../components/Button";
+import { aboutUsIn } from "../../animations/about_us";
+import splitting from "splitting";
 
 const FaqPage = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      splitting({
+        by: "words",
+        target: "#about_us [data-splitting]",
+      });
+      aboutUsIn();
+    }, 0);
+  }, []);
   const { Panel } = Collapse;
   return (
     <LandingLayout>
-      <FaqWrapper>
+      <FaqWrapper id="about_us">
         <FlexibleDiv justifyContent="flex-start" alignItems="flex-start">
-          <Typography.Title>
+          <Typography.Title data-splitting="">
             Frequently &nbsp;
-            <Button width="max-content">
+            {/* <Button width="max-content">
               Speak to a customer care agent
-            </Button>{" "}
+            </Button>{" "} */}
             <br />
             Asked Questions
           </Typography.Title>
